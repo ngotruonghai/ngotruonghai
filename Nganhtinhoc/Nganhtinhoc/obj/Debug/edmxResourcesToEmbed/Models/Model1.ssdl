@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NTHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Diemsinhvien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="masinhvien" Type="varchar" MaxLength="12" />
+    <Property Name="monhoc" Type="nvarchar" MaxLength="150" />
+    <Property Name="dieml1" Type="int" />
+    <Property Name="dieml2" Type="int" />
+    <Property Name="dieml3" Type="int" />
+    <Property Name="dieml4" Type="int" />
+    <Property Name="kq" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Giaovien">
+    <Key>
+      <PropertyRef Name="magiaovien" />
+    </Key>
+    <Property Name="magiaovien" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="manganh" Type="varchar" MaxLength="10" />
+    <Property Name="tengiaovien" Type="nvarchar" MaxLength="150" />
+    <Property Name="pass" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Nganh">
+    <Key>
+      <PropertyRef Name="manganh" />
+    </Key>
+    <Property Name="manganh" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tennganh" Type="nvarchar" MaxLength="150" />
+    <Property Name="khoahoc" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Sinhvien">
+    <Key>
+      <PropertyRef Name="masinhvien" />
+    </Key>
+    <Property Name="masinhvien" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="manganh" Type="varchar" MaxLength="10" />
+    <Property Name="tensinhvien" Type="nvarchar" MaxLength="50" />
+    <Property Name="pass" Type="nvarchar" MaxLength="20" />
+    <Property Name="meta" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tailieu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tentailieu" Type="nvarchar" MaxLength="150" />
+    <Property Name="text" Type="nvarchar(max)" />
+    <Property Name="file" Type="nvarchar(max)" />
+    <Property Name="magiaovien" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Tuyendung">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="img" Type="nvarchar" MaxLength="150" />
+    <Property Name="tieude" Type="nvarchar" MaxLength="150" />
+    <Property Name="vanban" Type="nvarchar(max)" />
+    <Property Name="meta" Type="nvarchar" MaxLength="150" />
+    <Property Name="hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="Thoikhoabieu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="manganh" Type="varchar" MaxLength="10" />
+    <Property Name="monhoc" Type="nvarchar" MaxLength="150" />
+    <Property Name="thu" Type="nvarchar" MaxLength="20" />
+    <Property Name="phong" Type="nvarchar" MaxLength="50" />
+    <Property Name="naybatdau" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngayketthuc" Type="nvarchar" MaxLength="50" />
+    <Property Name="giaoviengiangday" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Thongbao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tieude" Type="nvarchar" MaxLength="150" />
+    <Property Name="vanban" Type="nvarchar(max)" />
+    <Property Name="img" Type="nvarchar" MaxLength="150" />
+    <Property Name="meta" Type="nvarchar(max)" />
+    <Property Name="gioithieu" Type="nvarchar(max)" />
+    <Property Name="ngay" Type="date" />
+    <Property Name="hide" Type="bit" />
+  </EntityType>
+  <EntityType Name="Thongbaotruong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="meta" Type="nvarchar(max)" />
+    <Property Name="tieude" Type="nvarchar" MaxLength="150" />
+    <Property Name="vanban" Type="nvarchar(max)" />
+    <Property Name="ngay" Type="date" />
+    <Property Name="hide" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Diemsinhvien_Sinhvien">
+    <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="0..1" />
+    <End Role="Diemsinhvien" Type="Self.Diemsinhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinhvien">
+        <PropertyRef Name="masinhvien" />
+      </Principal>
+      <Dependent Role="Diemsinhvien">
+        <PropertyRef Name="masinhvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Giaovien_Nganh">
+    <End Role="Nganh" Type="Self.Nganh" Multiplicity="0..1" />
+    <End Role="Giaovien" Type="Self.Giaovien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nganh">
+        <PropertyRef Name="manganh" />
+      </Principal>
+      <Dependent Role="Giaovien">
+        <PropertyRef Name="manganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sinhvien_Nganh">
+    <End Role="Nganh" Type="Self.Nganh" Multiplicity="0..1" />
+    <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nganh">
+        <PropertyRef Name="manganh" />
+      </Principal>
+      <Dependent Role="Sinhvien">
+        <PropertyRef Name="manganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tailieu_Giaovien">
+    <End Role="Giaovien" Type="Self.Giaovien" Multiplicity="0..1" />
+    <End Role="Tailieu" Type="Self.Tailieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Giaovien">
+        <PropertyRef Name="magiaovien" />
+      </Principal>
+      <Dependent Role="Tailieu">
+        <PropertyRef Name="magiaovien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Thoikhoabieu_Nganh">
+    <End Role="Nganh" Type="Self.Nganh" Multiplicity="0..1" />
+    <End Role="Thoikhoabieu" Type="Self.Thoikhoabieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nganh">
+        <PropertyRef Name="manganh" />
+      </Principal>
+      <Dependent Role="Thoikhoabieu">
+        <PropertyRef Name="manganh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NTHModelStoreContainer">
+    <EntitySet Name="Diemsinhvien" EntityType="Self.Diemsinhvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giaovien" EntityType="Self.Giaovien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nganh" EntityType="Self.Nganh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tailieu" EntityType="Self.Tailieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thongbao" EntityType="Self.Thongbao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thongbaotruong" EntityType="Self.Thongbaotruong" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Diemsinhvien_Sinhvien" Association="Self.FK_Diemsinhvien_Sinhvien">
+      <End Role="Sinhvien" EntitySet="Sinhvien" />
+      <End Role="Diemsinhvien" EntitySet="Diemsinhvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Giaovien_Nganh" Association="Self.FK_Giaovien_Nganh">
+      <End Role="Nganh" EntitySet="Nganh" />
+      <End Role="Giaovien" EntitySet="Giaovien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sinhvien_Nganh" Association="Self.FK_Sinhvien_Nganh">
+      <End Role="Nganh" EntitySet="Nganh" />
+      <End Role="Sinhvien" EntitySet="Sinhvien" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tailieu_Giaovien" Association="Self.FK_Tailieu_Giaovien">
+      <End Role="Giaovien" EntitySet="Giaovien" />
+      <End Role="Tailieu" EntitySet="Tailieu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Thoikhoabieu_Nganh" Association="Self.FK_Thoikhoabieu_Nganh">
+      <End Role="Nganh" EntitySet="Nganh" />
+      <End Role="Thoikhoabieu" EntitySet="Thoikhoabieu" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

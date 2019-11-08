@@ -74,3 +74,9 @@ C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.c
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.csproj.CopyComplete
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.dll
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.pdb
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\EntityFramework.dll
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\EntityFramework.SqlServer.dll
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\EntityFramework.xml
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\EntityFramework.SqlServer.xml
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\CKFinder.dll
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\CKFinder.pdb

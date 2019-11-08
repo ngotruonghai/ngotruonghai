@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Thongbao>
+@foreach (var i in Model)
+{
+    <div class="single_iteam">
+        <a><img src="~/Content/upload/img/thongbao/@i.img" alt=""></a>
+        <div class="slider_article">
+            @*<h2><a class="slider_tittle" href="/thong-bao/@i.meta">@i.noidung</a></h2>*@
+        </div>
+    </div>
+}

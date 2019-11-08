@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NTHModelStoreContainer" CdmEntityContainer="NTHEntities">
+    <EntitySetMapping Name="Diemsinhvien">
+      <EntityTypeMapping TypeName="NTHModel.Diemsinhvien">
+        <MappingFragment StoreEntitySet="Diemsinhvien">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="masinhvien" ColumnName="masinhvien" />
+          <ScalarProperty Name="monhoc" ColumnName="monhoc" />
+          <ScalarProperty Name="dieml1" ColumnName="dieml1" />
+          <ScalarProperty Name="dieml2" ColumnName="dieml2" />
+          <ScalarProperty Name="dieml3" ColumnName="dieml3" />
+          <ScalarProperty Name="dieml4" ColumnName="dieml4" />
+          <ScalarProperty Name="kq" ColumnName="kq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Giaovien">
+      <EntityTypeMapping TypeName="NTHModel.Giaovien">
+        <MappingFragment StoreEntitySet="Giaovien">
+          <ScalarProperty Name="magiaovien" ColumnName="magiaovien" />
+          <ScalarProperty Name="manganh" ColumnName="manganh" />
+          <ScalarProperty Name="tengiaovien" ColumnName="tengiaovien" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nganh">
+      <EntityTypeMapping TypeName="NTHModel.Nganh">
+        <MappingFragment StoreEntitySet="Nganh">
+          <ScalarProperty Name="manganh" ColumnName="manganh" />
+          <ScalarProperty Name="tennganh" ColumnName="tennganh" />
+          <ScalarProperty Name="khoahoc" ColumnName="khoahoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sinhvien">
+      <EntityTypeMapping TypeName="NTHModel.Sinhvien">
+        <MappingFragment StoreEntitySet="Sinhvien">
+          <ScalarProperty Name="masinhvien" ColumnName="masinhvien" />
+          <ScalarProperty Name="manganh" ColumnName="manganh" />
+          <ScalarProperty Name="tensinhvien" ColumnName="tensinhvien" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="NTHModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tailieu">
+      <EntityTypeMapping TypeName="NTHModel.Tailieu">
+        <MappingFragment StoreEntitySet="Tailieu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tentailieu" ColumnName="tentailieu" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="file" ColumnName="file" />
+          <ScalarProperty Name="magiaovien" ColumnName="magiaovien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tuyendung">
+      <EntityTypeMapping TypeName="NTHModel.Tuyendung">
+        <MappingFragment StoreEntitySet="Tuyendung">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="tieude" ColumnName="tieude" />
+          <ScalarProperty Name="vanban" ColumnName="vanban" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="hide" ColumnName="hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thoikhoabieu">
+      <EntityTypeMapping TypeName="NTHModel.Thoikhoabieu">
+        <MappingFragment StoreEntitySet="Thoikhoabieu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="manganh" ColumnName="manganh" />
+          <ScalarProperty Name="monhoc" ColumnName="monhoc" />
+          <ScalarProperty Name="thu" ColumnName="thu" />
+          <ScalarProperty Name="phong" ColumnName="phong" />
+          <ScalarProperty Name="naybatdau" ColumnName="naybatdau" />
+          <ScalarProperty Name="ngayketthuc" ColumnName="ngayketthuc" />
+          <ScalarProperty Name="giaoviengiangday" ColumnName="giaoviengiangday" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thongbao">
+      <EntityTypeMapping TypeName="NTHModel.Thongbao">
+        <MappingFragment StoreEntitySet="Thongbao">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tieude" ColumnName="tieude" />
+          <ScalarProperty Name="vanban" ColumnName="vanban" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="gioithieu" ColumnName="gioithieu" />
+          <ScalarProperty Name="ngay" ColumnName="ngay" />
+          <ScalarProperty Name="hide" ColumnName="hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thongbaotruong">
+      <EntityTypeMapping TypeName="NTHModel.Thongbaotruong">
+        <MappingFragment StoreEntitySet="Thongbaotruong">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="meta" ColumnName="meta" />
+          <ScalarProperty Name="tieude" ColumnName="tieude" />
+          <ScalarProperty Name="vanban" ColumnName="vanban" />
+          <ScalarProperty Name="ngay" ColumnName="ngay" />
+          <ScalarProperty Name="hide" ColumnName="hide" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
