@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Thongbaotruong>
+@foreach (var i in Model)
+{
+    <li style="margin-top: 0px;">
+        <div class="media">
+            @*<a href="pages/single_page.html" class="media-left"> <img alt="" src="images/post_img1.jpg"> </a>*@
+            <div class="media-body"> <a href="/thong-bao-truong/@i.meta" class="catg_title">@i.tieude</a> </div>
+            <div style="float:right">@i.ngay</div>
+            <hr />
+        </div>
+    </li>
+}

@@ -133,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Models\trangController.cs" />
+    <Compile Include="Controllers\detailController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3233,6 +3234,10 @@
     <Content Include="Views\Shared\my_layout.cshtml" />
     <Content Include="Views\Home1\Index.cshtml" />
     <Content Include="Views\Home1\get_thongbao.cshtml" />
+    <Content Include="Views\Home1\get_thongbaotruong.cshtml" />
+    <Content Include="Views\Shared\detail_layout.cshtml" />
+    <Content Include="Views\detail\get_thongbaotruong.cshtml" />
+    <Content Include="Views\detail\get_chitietTBT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

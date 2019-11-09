@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Thongbaotruong>
+
+@{
+    ViewBag.Title = "get_thongbaotruong";
+    Layout = "~/Views/Shared/detail_layout.cshtml";
+}
+<div class="single_post_content">
+    <h2 style="margin-top:25px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><span>Thông Báo Trường</span></h2>
+    @foreach(var i in Model)
+    {
+        <p><h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><strong>@i.tieude</strong></h3></p>
+        @Html.Raw(i.vanban)
+    }
+</div>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Thongbaotruong>
+
+@{
+    ViewBag.Title = "get_chitietTBT";
+    Layout = "~/Views/Shared/detail_layout.cshtml";
+}
+<div class="single_post_content">
+    <h2 style="margin-top:25px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><span>Thông Báo Trường</span></h2>
+    <div class="container">
+        @foreach (var i in Model)
+        {
+            <div class="row">
+                <h3> @i.tieude</h3>
+                <div class="row"> <p style="float:right">@i.ngay</p></div>
+                <div class="row">
+                    <a href="/thong-bao-truong/@i.meta" style="float:right;color:deepskyblue">Chi tiết...</a>
+                </div>
+            </div>
+            <hr style="border-bottom:solid 1px"/>
+        }
+    </div>
+</div>

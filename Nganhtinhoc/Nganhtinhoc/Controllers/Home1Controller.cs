@@ -23,5 +23,13 @@ namespace Nganhtinhoc.Controllers
                     select f).Take(3);
             return PartialView(v.ToList());
         }
+        public ActionResult get_thongbaotruong()
+        {
+            var v = (from f in db.Thongbaotruong
+                     where f.hide == true
+                     orderby f.id descending
+                     select f).Take(5);
+            return PartialView(v.ToList());
+        }
     }
 }
