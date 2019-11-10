@@ -1,10 +1,5 @@
 ﻿@model IEnumerable<Nganhtinhoc.Models.Giaovien>
 @foreach (var i in Model)
 {
-    <li>
-        <div class="media wow fadeInDown" style="visibility: hidden; animation-name: none;">
-          @Html.Action("get_tailieu", "Home1",new {ma=i.magiaovien })
-            <p style="float:right">@i.tengiaovien</p>
-        </div>
-    </li>
+    @i.tengiaovien
 }

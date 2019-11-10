@@ -1,5 +1,15 @@
 ﻿@model IEnumerable<Nganhtinhoc.Models.Tailieu>
 @foreach (var i in Model)
 {
-    <div class="media-body"> <a href="#" class="catg_title"><h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;border-bottom:dashed 0.5px">@i.tentailieu</h3></a> </div>
+    <li style="border-bottom:solid 1px">
+        <div class="media wow fadeInDown" style="visibility: hidden; animation-name: none;">
+           <div class="col-lg-12 col-md-12 col-sm-12">
+               <div class="col-lg-2 col-md-2 col-sm-2" style="margin-top:25px"><span class="glyphicon glyphicon-hand-right"></span></div>
+               <div class="col-lg-10 col-md-10 col-sm-10"> 
+               <div class="media-body"> <a href="#" class="catg_title"><h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;border-bottom:dashed 0.5px">@i.tentailieu</h3></a> </div>
+               </div>
+           </div>
+            <p style="float:right">Tên giáo viên: @Html.Action("get_giaovien", "Home1", new { ma = i.magiaovien })</p>
+        </div>
+    </li>
 }

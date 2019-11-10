@@ -31,17 +31,31 @@ namespace Nganhtinhoc.Controllers
                      select f).Take(4);
             return PartialView(v.ToList());
         }
-        public ActionResult get_tailieu(string ma)
+        //public ActionResult get_tailieu(string ma)
+        //{
+        //    var v = (from f in db.Tailieu
+        //             where f.magiaovien == ma
+        //             orderby f.id descending
+        //             select f);
+        //    return PartialView(v.ToList());
+        //}
+        //public ActionResult get_giaovien()
+        //{
+        //    var v = from f in db.Giaovien
+        //            select f;
+        //    return PartialView(v.ToList());
+        //}
+        public ActionResult get_tailieu()
         {
             var v = (from f in db.Tailieu
-                     where f.magiaovien == ma
                      orderby f.id descending
-                     select f);
+                     select f).Take(4);
             return PartialView(v.ToList());
         }
-        public ActionResult get_giaovien()
+        public ActionResult get_giaovien(string ma)
         {
             var v = from f in db.Giaovien
+                    where f.magiaovien==ma
                     select f;
             return PartialView(v.ToList());
         }
