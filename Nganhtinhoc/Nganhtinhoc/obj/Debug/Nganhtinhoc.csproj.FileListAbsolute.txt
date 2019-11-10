@@ -80,3 +80,7 @@ C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\EntityFramework.xml
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\EntityFramework.SqlServer.xml
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\CKFinder.dll
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\CKFinder.pdb
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\PagedList.dll
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\PagedList.Mvc.dll
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\PagedList.xml
+C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\PagedList.Mvc.xml

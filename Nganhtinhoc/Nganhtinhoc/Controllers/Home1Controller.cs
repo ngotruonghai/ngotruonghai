@@ -28,7 +28,21 @@ namespace Nganhtinhoc.Controllers
             var v = (from f in db.Thongbaotruong
                      where f.hide == true
                      orderby f.id descending
-                     select f).Take(5);
+                     select f).Take(4);
+            return PartialView(v.ToList());
+        }
+        public ActionResult get_tailieu(string ma)
+        {
+            var v = (from f in db.Tailieu
+                     where f.magiaovien == ma
+                     orderby f.id descending
+                     select f);
+            return PartialView(v.ToList());
+        }
+        public ActionResult get_giaovien()
+        {
+            var v = from f in db.Giaovien
+                    select f;
             return PartialView(v.ToList());
         }
     }
