@@ -1,14 +1,13 @@
-﻿using System.Collections.Generic;
-using System;
-using System.Linq;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.Routing;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-
-namespace web_nganhtinhoc.help
+namespace Nganhtinhoc.Help
 {
     public static class Functions
     {
@@ -35,7 +34,7 @@ namespace web_nganhtinhoc.help
             text = text.Replace(" ", "-");
             Regex regex = new Regex(@"\p{IsCombiningDiacriticalMarks}+");
             string strFormD = text.Normalize(System.Text.NormalizationForm.FormD);
-            return regex.Replace(strFormD, string.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+            return regex.Replace(strFormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
 
         // As the text the: "<span class='glyphicon glyphicon-plus'></span>" can be entered

@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Nganhtinhoc.Models;
+using Nganhtinhoc.Help;
+using System.Data.Entity.Validation;
+using System.IO;
 
 namespace Nganhtinhoc.Areas.admin.Models
 {
@@ -46,10 +49,27 @@ namespace Nganhtinhoc.Areas.admin.Models
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,tieude,vanban,img,meta,gioithieu,ngay,hide")] Thongbao thongbao)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "id,tieude,vanban,img,meta,gioithieu,ngay,hide")] Thongbao thongbao, HttpPostedFileBase img)
         {
+            var path = "";
+            var filename = "";
             if (ModelState.IsValid)
             {
+                if (img != null)
+                {
+                    //filename = Guid.NewGuid().ToString() + img.FileName;
+                    filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
+                    path = Path.Combine(Server.MapPath("~/Content/upload/img/thongbao"), filename);
+                    img.SaveAs(path);
+                    thongbao.img = filename; //Lưu ý
+                }
+                // temp.datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());    
+                else
+                {
+                    thongbao.img = "";
+                }
+                thongbao.meta = Functions.ConvertToUnSign(thongbao.meta); //convert Tiếng Việt không dấu
                 db.Thongbao.Add(thongbao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
