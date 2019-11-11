@@ -55,6 +55,13 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="Taikhoan">
+          <Key>
+            <PropertyRef Name="user" />
+          </Key>
+          <Property Name="user" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="150" />
+        </EntityType>
         <EntityType Name="Tailieu">
           <Key>
             <PropertyRef Name="id" />
@@ -179,6 +186,7 @@
           <EntitySet Name="Nganh" EntityType="Self.Nganh" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tailieu" EntityType="Self.Tailieu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" Schema="dbo" store:Type="Tables" />
@@ -267,6 +275,13 @@
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Taikhoan">
+          <Key>
+            <PropertyRef Name="user" />
+          </Key>
+          <Property Name="user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tailieu">
           <Key>
@@ -394,6 +409,7 @@
           <EntitySet Name="Nganh" EntityType="Self.Nganh" />
           <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" />
           <EntitySet Name="Tailieu" EntityType="Self.Tailieu" />
           <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" />
           <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" />
@@ -478,6 +494,14 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taikhoan">
+            <EntityTypeMapping TypeName="NTHModel.Taikhoan">
+              <MappingFragment StoreEntitySet="Taikhoan">
+                <ScalarProperty Name="user" ColumnName="user" />
+                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

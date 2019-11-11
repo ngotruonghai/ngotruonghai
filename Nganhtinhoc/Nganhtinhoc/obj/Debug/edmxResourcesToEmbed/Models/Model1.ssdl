@@ -50,6 +50,13 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <EntityType Name="Taikhoan">
+    <Key>
+      <PropertyRef Name="user" />
+    </Key>
+    <Property Name="user" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="150" />
+  </EntityType>
   <EntityType Name="Tailieu">
     <Key>
       <PropertyRef Name="id" />
@@ -174,6 +181,7 @@
     <EntitySet Name="Nganh" EntityType="Self.Nganh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tailieu" EntityType="Self.Tailieu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" Schema="dbo" store:Type="Tables" />

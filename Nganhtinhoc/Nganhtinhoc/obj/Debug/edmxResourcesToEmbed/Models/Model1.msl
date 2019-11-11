@@ -56,6 +56,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Taikhoan">
+      <EntityTypeMapping TypeName="NTHModel.Taikhoan">
+        <MappingFragment StoreEntitySet="Taikhoan">
+          <ScalarProperty Name="user" ColumnName="user" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Tailieu">
       <EntityTypeMapping TypeName="NTHModel.Tailieu">
         <MappingFragment StoreEntitySet="Tailieu">

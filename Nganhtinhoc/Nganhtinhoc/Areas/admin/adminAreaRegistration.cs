@@ -17,7 +17,7 @@ namespace Nganhtinhoc.Areas.admin
             context.MapRoute(
                 "admin_default",
                 "admin/{controller}/{action}/{id}",
-                new { Controller= "trang", action = "Index", id = UrlParameter.Optional }
+                new { Controller= "login1", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

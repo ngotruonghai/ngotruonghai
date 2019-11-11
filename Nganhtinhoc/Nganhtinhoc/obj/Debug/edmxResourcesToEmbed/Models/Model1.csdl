@@ -58,6 +58,13 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
+  <EntityType Name="Taikhoan">
+    <Key>
+      <PropertyRef Name="user" />
+    </Key>
+    <Property Name="user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Tailieu">
     <Key>
       <PropertyRef Name="id" />
@@ -184,6 +191,7 @@
     <EntitySet Name="Nganh" EntityType="Self.Nganh" />
     <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" />
     <EntitySet Name="Tailieu" EntityType="Self.Tailieu" />
     <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" />
     <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" />
