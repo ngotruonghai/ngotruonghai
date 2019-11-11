@@ -7,16 +7,24 @@
 
 <h2>Details</h2>
 
-<div>
+<div style="margin-left:100px">
     <h4>Thongbao</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.tieude)
+            @Html.DisplayName("Tiêu đề")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tieude)
+            <div class="card mb-4 py-3 border-left-danger">
+                <div class="card-body">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            @Html.DisplayFor(model => model.tieude)
+                        </font>
+                    </font>
+                </div>
+            </div>
         </dd>
 
         <dt>
@@ -24,7 +32,15 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.vanban)
+            <div class="card mb-4 py-3 border-left-danger">
+                <div class="card-body">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            @Html.DisplayFor(model => model.vanban)
+                        </font>
+                    </font>
+                </div>
+            </div>  
         </dd>
 
         <dt>
@@ -32,7 +48,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.img)
+            <img src="~/Content/upload/img/thongbao/@Model.img" width="200px" />
         </dd>
 
         <dt>
@@ -40,15 +56,32 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.meta)
+            <div class="card mb-4 py-3 border-left-danger">
+                <div class="card-body">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            @Html.DisplayFor(model=>model.meta)
+                        </font>
+                    </font>
+                </div>
+            </div>
         </dd>
 
         <dt>
+
             @Html.DisplayNameFor(model => model.gioithieu)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.gioithieu)
+            <div class="card mb-4 py-3 border-left-danger">
+                <div class="card-body">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                            @Html.DisplayFor(model => model.gioithieu)
+                        </font>
+                    </font>
+                </div>
+            </div>
         </dd>
 
         <dt>

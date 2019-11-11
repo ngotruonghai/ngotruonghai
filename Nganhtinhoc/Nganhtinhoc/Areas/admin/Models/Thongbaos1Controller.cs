@@ -98,17 +98,38 @@ namespace Nganhtinhoc.Areas.admin.Models
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,tieude,vanban,img,meta,gioithieu,ngay,hide")] Thongbao thongbao)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "id,tieude,vanban,img,meta,gioithieu,ngay,hide")] Thongbao thongbao ,HttpPostedFileBase img)
         {
+            var path = "";
+            var filename = "";
+            Thongbao temp = getById(thongbao.id);
             if (ModelState.IsValid)
             {
-                db.Entry(thongbao).State = EntityState.Modified;
+                if (img != null)
+                {
+                    //filename = Guid.NewGuid().ToString() + img.FileName;
+                    filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
+                    path = Path.Combine(Server.MapPath("~/Content/upload/img/thongbao"), filename);
+                    img.SaveAs(path);
+                    thongbao.img = filename; //Lưu ý
+                }
+                // temp.datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());                   
+                temp.tieude = thongbao.tieude;
+                temp.vanban = thongbao.vanban;
+                temp.meta = Functions.ConvertToUnSign(thongbao.meta); //convert Tiếng Việt không dấu
+                temp.hide = thongbao.hide;
+                db.Entry(temp).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(thongbao);
         }
+        public Thongbao getById(long id)
+        {
+            return db.Thongbao.Where(x => x.id == id).FirstOrDefault();
 
+        }
         // GET: admin/Thongbaos1/Delete/5
         public ActionResult Delete(int? id)
         {
