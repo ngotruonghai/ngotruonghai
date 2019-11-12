@@ -62,13 +62,14 @@ namespace Nganhtinhoc.Areas.admin.Models
                     filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
                     path = Path.Combine(Server.MapPath("~/Content/upload/img/thongbao"), filename);
                     img.SaveAs(path);
-                    thongbao.img = filename; //Lưu ý
+                    thongbao.img = filename; //Lưu ý 
                 }
                 // temp.datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());    
                 else
                 {
                     thongbao.img = "";
                 }
+                thongbao.ngay = DateTime.Now;
                 thongbao.meta = Functions.ConvertToUnSign(thongbao.meta); //convert Tiếng Việt không dấu
                 db.Thongbao.Add(thongbao);
                 db.SaveChanges();
