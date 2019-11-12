@@ -21,7 +21,7 @@ namespace model
                 new SqlParameter("@username",u),
                 new SqlParameter("@password",p),
             };
-            var res = context.Database.SqlQuery<bool>("login_admin @username,@password", sqlp).SingleOrDefault();
+            var res = context.Database.SqlQuery<bool>("admin @username,@password", sqlp).SingleOrDefault();
             return res;
         }
     }

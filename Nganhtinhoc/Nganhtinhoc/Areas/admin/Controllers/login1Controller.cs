@@ -22,7 +22,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         public ActionResult Index(loginMD model)
         {
             var result = new accout().loginn(model.user, model.pass);
-            if (ModelState.IsValid)
+            if (result && ModelState.IsValid)
             {
                 FormsAuthentication.SetAuthCookie(model.user, model.rememberme);
                 return RedirectToAction("Index", "Thongbaos1");
