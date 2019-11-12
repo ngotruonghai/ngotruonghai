@@ -139,6 +139,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
+    <Compile Include="Areas\admin\Controllers\SinhviensController.cs" />
     <Compile Include="Areas\admin\Models\Thongbaos1Controller.cs" />
     <Compile Include="Areas\admin\Models\trangController.cs" />
     <Compile Include="Controllers\detailController.cs" />
@@ -2696,6 +2697,11 @@
     </Content>
     <Content Include="Areas\admin\Views\Shared\login_layout.cshtml" />
     <Content Include="Areas\admin\Views\login1\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Sinhviens\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Sinhviens\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Sinhviens\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Sinhviens\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Sinhviens\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
