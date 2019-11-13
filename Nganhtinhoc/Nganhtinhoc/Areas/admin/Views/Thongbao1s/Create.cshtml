@@ -4,82 +4,85 @@
     ViewBag.Title = "Create";
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
-
 <h2>Create</h2>
 
 @using (Html.BeginForm("Create", "Thongbao1s", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Thongbao</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.tieude, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.tieude, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.tieude, "", new { @class = "text-danger" })
-            </div>
+<div class="form-horizontal">
+    <h4>Thongbao</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.tieude, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tieude, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tieude, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.Label("Văn bản", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.vanban, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.vanban, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.Label("Văn bản", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.vanban, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.vanban, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.Label("Hình đại diện", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <input type="file" name="img" id="img" accept=".jpg,.png,.gif,.jpeg,.bmp" />
-                @Html.ValidationMessageFor(model => model.img, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.Label("Hình đại diện", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="img" id="img" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+            @Html.ValidationMessageFor(model => model.img, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.meta, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.meta, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.meta, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.meta, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.meta, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.meta, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.gioithieu, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.gioithieu, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.gioithieu, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.gioithieu, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.gioithieu, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.gioithieu, "", new { @class = "text-danger" })
         </div>
+    </div>
 
 
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.hide, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.Label("Hiển thị", htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
+    <div class="form-group">
+        @Html.LabelFor(model => model.hide, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.Label("Hiển thị", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
 
-                        @{
-                            bool hide = true;
-                        }
-                        @Html.CheckBoxFor(model => hide)
+                    @{
+                        bool hide = true;
+                    }
+                    @Html.CheckBoxFor(model => hide)
 
-                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
     </div>
+    <a href="#" class="btn btn-danger btn-icon-split" style="margin-left:100px">
+        <span class="icon text-white-50">
+            <i class="fas fa-check" style="margin-top:15px"></i>
+        </span>
+        <span class="text"><font style="vertical-align: inherit;" >
+        <div>
+            <input type="submit" value="Create" class="btn btn-default" style="color:white"/>
+        </div>
+</font></span>
+    </a>
+</div>
 }
 
 <div>

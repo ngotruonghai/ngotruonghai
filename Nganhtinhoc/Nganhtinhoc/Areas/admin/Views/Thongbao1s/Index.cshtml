@@ -5,8 +5,6 @@
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
 
-<h2>Index</h2>
-
 <h3 style="text-align:center"><strong>Thông báo trường</strong></h3>
 <div class="container">
     <p style="float:right">
@@ -28,7 +26,7 @@
                             <th>iMG</th>
                             <th>Ngày</th>
                             <th>Hide</th>
-                            <th>Chức năng</th>
+                            <th style="width:80px">Chức năng</th>
                         </tr>
 
                     </thead>
@@ -43,8 +41,8 @@
                                 <td>
                                     <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">
-                                            @Html.ActionLink(" ", "Edit", new { id = i.id }, new { @class = "fas fa-pen", @Style = "color:	#00BFFF;" })&ensp;&ensp;
-                                            @Html.ActionLink(" ", "Details", new { id = i.id }, new { @class = "fas fa-eye", @Style = "color:#0033CC	;" })&ensp;&ensp;
+                                            @Html.ActionLink(" ", "Edit", new { id = i.id }, new { @class = "fas fa-pen", @Style = "color:	#00BFFF;" })@*&ensp;&ensp;*@
+                                            @Html.ActionLink(" ", "Details", new { id = i.id }, new { @class = "fas fa-eye", @Style = "color:#0033CC	;" })@*&ensp;&ensp;*@
                                             @Html.ActionLink(" ", "Delete", new { id = i.id }, new { @class = "fas fa-trash", @Style = "color:#980000 	;" })
                                         </font>
                                     </font>
