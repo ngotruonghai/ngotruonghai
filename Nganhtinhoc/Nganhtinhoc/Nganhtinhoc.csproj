@@ -140,7 +140,7 @@
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\baseeController.cs" />
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
-    <Compile Include="Areas\admin\Controllers\ThongbaoController.cs" />
+    <Compile Include="Areas\admin\Controllers\Thongbao1sController.cs" />
     <Compile Include="Areas\admin\Models\trangController.cs" />
     <Compile Include="Controllers\detailController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
@@ -2693,11 +2693,11 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\Thongbao\Create.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao\Details.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
