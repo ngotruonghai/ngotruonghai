@@ -14,7 +14,7 @@ namespace Nganhtinhoc.Models
     
     public partial class Taikhoan
     {
-        public string user { get; set; }
-        public string password { get; set; }
+        public string tk { get; set; }
+        public string pass { get; set; }
     }
 }

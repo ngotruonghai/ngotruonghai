@@ -17,7 +17,7 @@ namespace Nganhtinhoc.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sinhvien()
         {
-            this.Diemsinhvien = new HashSet<Diemsinhvien>();
+            this.Diemsinhviens = new HashSet<Diemsinhvien>();
         }
     
         public string masinhvien { get; set; }
@@ -27,7 +27,7 @@ namespace Nganhtinhoc.Models
         public string meta { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Diemsinhvien> Diemsinhvien { get; set; }
+        public virtual ICollection<Diemsinhvien> Diemsinhviens { get; set; }
         public virtual Nganh Nganh { get; set; }
     }
 }

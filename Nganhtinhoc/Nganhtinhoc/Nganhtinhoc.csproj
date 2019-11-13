@@ -138,10 +138,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\baseeController.cs" />
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
-    <Compile Include="Areas\admin\Controllers\SinhviensController.cs" />
-    <Compile Include="Areas\admin\Controllers\TailieuxController.cs" />
-    <Compile Include="Areas\admin\Models\Thongbaos1Controller.cs" />
+    <Compile Include="Areas\admin\Controllers\ThongbaoController.cs" />
     <Compile Include="Areas\admin\Models\trangController.cs" />
     <Compile Include="Controllers\detailController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
@@ -150,6 +149,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Help\Functions.cs" />
+    <Compile Include="Models\Common.cs" />
     <Compile Include="Models\Diemsinhvien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -178,7 +178,7 @@
     <Compile Include="Models\Sinhvien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Taikhoan.cs">
@@ -2684,11 +2684,8 @@
     <Content Include="Areas\admin\content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Areas\admin\content\vendor\jquery\jquery.min.map" />
     <Content Include="Areas\admin\content\vendor\jquery\jquery.slim.min.map" />
-    <Content Include="Areas\admin\Views\Thongbaos1\Create.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbaos1\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbaos1\Details.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbaos1\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbaos1\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\login_layout.cshtml" />
+    <Content Include="Areas\admin\Views\login1\Index.cshtml" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -2696,18 +2693,11 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\Shared\login_layout.cshtml" />
-    <Content Include="Areas\admin\Views\login1\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Sinhviens\Create.cshtml" />
-    <Content Include="Areas\admin\Views\Sinhviens\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\Sinhviens\Details.cshtml" />
-    <Content Include="Areas\admin\Views\Sinhviens\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\Sinhviens\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Tailieux\Create.cshtml" />
-    <Content Include="Areas\admin\Views\Tailieux\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\Tailieux\Details.cshtml" />
-    <Content Include="Areas\admin\Views\Tailieux\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\Tailieux\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2745,6 +2735,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Views\basee\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

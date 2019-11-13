@@ -17,7 +17,7 @@ namespace Nganhtinhoc.Controllers
         }
         public ActionResult get_thongbao()
         {
-            var v = (from f in db.Thongbao
+            var v = (from f in db.Thongbaos
                     where f.hide == true
                     orderby f.id descending
                     select f).Take(3);
@@ -25,7 +25,7 @@ namespace Nganhtinhoc.Controllers
         }
         public ActionResult get_thongbaotruong()
         {
-            var v = (from f in db.Thongbaotruong
+            var v = (from f in db.Thongbaotruongs
                      where f.hide == true
                      orderby f.id descending
                      select f).Take(4);
@@ -47,14 +47,14 @@ namespace Nganhtinhoc.Controllers
         //}
         public ActionResult get_tailieu()
         {
-            var v = (from f in db.Tailieu
+            var v = (from f in db.Tailieux
                      orderby f.id descending
                      select f).Take(4);
             return PartialView(v.ToList());
         }
         public ActionResult get_giaovien(string ma)
         {
-            var v = from f in db.Giaovien
+            var v = from f in db.Giaoviens
                     where f.magiaovien==ma
                     select f;
             return PartialView(v.ToList());

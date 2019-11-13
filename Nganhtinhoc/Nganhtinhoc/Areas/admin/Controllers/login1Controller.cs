@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using model;
 using Nganhtinhoc.Models;
 using System.Web.Security;
+using model.DAO;
 
 namespace Nganhtinhoc.Areas.admin.Controllers
 {
@@ -21,11 +22,16 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(loginMD model)
         {
-            var result = new accout().loginn(model.user, model.pass);
+            var dao = new AccountDAO();
+            var result = dao.log(model.user, model.pass);
             if (result && ModelState.IsValid)
             {
-                FormsAuthentication.SetAuthCookie(model.user, model.rememberme);
-                return RedirectToAction("Index", "Thongbaos1");
+                var user = dao.GetID(model.user);
+                var sesion = new loginMD();
+                sesion.user = user.tk;
+                Session.Add(Common.User_session, sesion);
+                //FormsAuthentication.SetAuthCookie(model.user, model.rememberme);
+                return RedirectToAction("Index", "Thongbao");
             }
             else
             {

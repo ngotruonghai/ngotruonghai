@@ -8,26 +8,26 @@ using System.Web;
 using System.Web.Mvc;
 using Nganhtinhoc.Models;
 
-namespace Nganhtinhoc.Areas.admin.Models
+namespace Nganhtinhoc.Areas.admin.Controllers
 {
-    public class ThongbaosController : Controller
+    public class ThongbaoController : baseeController
     {
         private NTHEntities db = new NTHEntities();
 
-        // GET: admin/Thongbaos
+        // GET: admin/Thongbao
         public ActionResult Index()
         {
-            return View(db.Thongbao.ToList());
+            return View(db.Thongbaos.ToList());
         }
 
-        // GET: admin/Thongbaos/Details/5
+        // GET: admin/Thongbao/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Thongbao thongbao = db.Thongbao.Find(id);
+            Thongbao thongbao = db.Thongbaos.Find(id);
             if (thongbao == null)
             {
                 return HttpNotFound();
@@ -35,13 +35,13 @@ namespace Nganhtinhoc.Areas.admin.Models
             return View(thongbao);
         }
 
-        // GET: admin/Thongbaos/Create
+        // GET: admin/Thongbao/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: admin/Thongbaos/Create
+        // POST: admin/Thongbao/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -50,7 +50,7 @@ namespace Nganhtinhoc.Areas.admin.Models
         {
             if (ModelState.IsValid)
             {
-                db.Thongbao.Add(thongbao);
+                db.Thongbaos.Add(thongbao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -58,14 +58,14 @@ namespace Nganhtinhoc.Areas.admin.Models
             return View(thongbao);
         }
 
-        // GET: admin/Thongbaos/Edit/5
+        // GET: admin/Thongbao/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Thongbao thongbao = db.Thongbao.Find(id);
+            Thongbao thongbao = db.Thongbaos.Find(id);
             if (thongbao == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace Nganhtinhoc.Areas.admin.Models
             return View(thongbao);
         }
 
-        // POST: admin/Thongbaos/Edit/5
+        // POST: admin/Thongbao/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,14 +89,14 @@ namespace Nganhtinhoc.Areas.admin.Models
             return View(thongbao);
         }
 
-        // GET: admin/Thongbaos/Delete/5
+        // GET: admin/Thongbao/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Thongbao thongbao = db.Thongbao.Find(id);
+            Thongbao thongbao = db.Thongbaos.Find(id);
             if (thongbao == null)
             {
                 return HttpNotFound();
@@ -104,13 +104,13 @@ namespace Nganhtinhoc.Areas.admin.Models
             return View(thongbao);
         }
 
-        // POST: admin/Thongbaos/Delete/5
+        // POST: admin/Thongbao/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Thongbao thongbao = db.Thongbao.Find(id);
-            db.Thongbao.Remove(thongbao);
+            Thongbao thongbao = db.Thongbaos.Find(id);
+            db.Thongbaos.Remove(thongbao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/login_layout.cshtml";
+}
+@model Nganhtinhoc.Models.loginMD
+<html>
+<head>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Dăng nhập cho sinh viên</title>
+</head>
+<body">
+    <div class="container">
+        <div class="col-lg-12" style="text-align:center;margin-top:250px">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken();
+                @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                <div class="form-group">
+                    <div class="form-label-group">
+                        @Html.TextBoxFor(Model => Model.user, new { @id = "inputEmail", @class = "form_control", @placeholder = "Emial address", @required = "required" })
+                        <label for="inputEmail"></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-label-group">
+                        @Html.PasswordFor(Model => Model.pass, new { @id = "inpupassword", @class = "form_control", @placeholder = "password", @required = "required" })
+                        <label for="inpupassword"></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(Model => Model.rememberme)
+                        renmae
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block" style="width:350px;text-align:center;display: inline-block">login</button>
+            }
+        </div>
+    </div>
+</body>
+</html>

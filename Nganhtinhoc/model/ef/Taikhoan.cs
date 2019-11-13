@@ -1,4 +1,4 @@
-namespace model.Emtity
+namespace model.ef
 {
     using System;
     using System.Collections.Generic;

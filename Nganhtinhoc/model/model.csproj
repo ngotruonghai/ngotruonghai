@@ -54,12 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accout.cs" />
+    <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="Emtity\Diemsinhvien.cs" />
     <Compile Include="Emtity\Giaovien.cs" />
     <Compile Include="Emtity\Nganh.cs" />
     <Compile Include="Emtity\NTHdbContext.cs" />
     <Compile Include="Emtity\Sinhvien.cs" />
-    <Compile Include="Emtity\sysdiagrams.cs" />
+    <Compile Include="Emtity\sysdiagram.cs" />
     <Compile Include="Emtity\Taikhoan.cs" />
     <Compile Include="Emtity\Tailieu.cs" />
     <Compile Include="Emtity\Thoikhoabieu.cs" />

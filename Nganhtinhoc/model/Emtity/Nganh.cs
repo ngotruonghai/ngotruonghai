@@ -12,9 +12,9 @@ namespace model.Emtity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Nganh()
         {
-            Giaovien = new HashSet<Giaovien>();
-            Sinhvien = new HashSet<Sinhvien>();
-            Thoikhoabieu = new HashSet<Thoikhoabieu>();
+            Giaoviens = new HashSet<Giaovien>();
+            Sinhviens = new HashSet<Sinhvien>();
+            Thoikhoabieux = new HashSet<Thoikhoabieu>();
         }
 
         [Key]
@@ -28,12 +28,12 @@ namespace model.Emtity
         public string khoahoc { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Giaovien> Giaovien { get; set; }
+        public virtual ICollection<Giaovien> Giaoviens { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sinhvien> Sinhvien { get; set; }
+        public virtual ICollection<Sinhvien> Sinhviens { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Thoikhoabieu> Thoikhoabieu { get; set; }
+        public virtual ICollection<Thoikhoabieu> Thoikhoabieux { get; set; }
     }
 }
