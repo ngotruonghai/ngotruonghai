@@ -139,9 +139,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\baseeController.cs" />
+    <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
     <Compile Include="Areas\admin\Controllers\Thongbao1sController.cs" />
-    <Compile Include="Areas\admin\Models\trangController.cs" />
     <Compile Include="Controllers\detailController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2513,7 +2513,6 @@
     <Content Include="Content\template\newsfeed\assets\fonts\Varela-400.woff" />
     <Content Include="Areas\admin\Views\web.config" />
     <Content Include="Areas\admin\Views\Shared\admin_layout.cshtml" />
-    <Content Include="Areas\admin\Views\trang\Index.cshtml" />
     <Content Include="Areas\admin\content\ckeditor\CHANGES.md" />
     <Content Include="Areas\admin\content\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Areas\admin\content\ckfinder\userfiles\.htaccess" />
@@ -2698,6 +2697,7 @@
     <Content Include="Areas\admin\Views\Thongbao1s\Details.cshtml" />
     <Content Include="Areas\admin\Views\Thongbao1s\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Thongbao1s\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2735,6 +2735,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Models\" />
     <Folder Include="Areas\admin\Views\basee\" />
   </ItemGroup>
   <ItemGroup>

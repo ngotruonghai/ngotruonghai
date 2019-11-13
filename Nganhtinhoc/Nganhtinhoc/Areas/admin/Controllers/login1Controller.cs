@@ -31,7 +31,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
                 sesion.user = user.tk;
                 Session.Add(Common.User_session, sesion);
                 //FormsAuthentication.SetAuthCookie(model.user, model.rememberme);
-                return RedirectToAction("Index", "trang");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
