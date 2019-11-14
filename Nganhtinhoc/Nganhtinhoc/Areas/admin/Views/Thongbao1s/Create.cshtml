@@ -72,22 +72,17 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="btn btn-danger btn-icon-split" style="width:100px">
-            <span class="text">
-                <font style="vertical-align: inherit;">
-                    <div>
-                        <input type="submit" value="Create" class="btn btn-default" style="color:white" />
-                    </div>
-                </font>
-            </span>
-        </a>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-danger" />
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Quay lại", "Index")
+        </div>
     </div>
 </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 @section _Footer
 {
     <script src="~/Areas/admin/Content/ckfinder/ckfinder.js"></script>
