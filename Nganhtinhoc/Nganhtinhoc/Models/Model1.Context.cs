@@ -35,5 +35,7 @@ namespace Nganhtinhoc.Models
         public virtual DbSet<Thoikhoabieu> Thoikhoabieu { get; set; }
         public virtual DbSet<Thongbao> Thongbao { get; set; }
         public virtual DbSet<Thongbaotruong> Thongbaotruong { get; set; }
+
+        public System.Data.Entity.DbSet<model.Emtity.Thongbao> Thongbaos { get; set; }
     }
 }

@@ -8,22 +8,15 @@ using PagedList;
 
 namespace Nganhtinhoc.Controllers
 {
-    public class detailController : Controller
+    public class menuController : Controller
     {
         NTHEntities db = new NTHEntities();
-        // GET: detail
+        // GET: menu
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult get_thongbaotruong(string meta)
-        {
-            var v = from f in db.Thongbaotruong
-                    where f.meta==meta
-                    select f;
-            return PartialView(v.ToList());
-        }
-        public ActionResult get_chitietTBT(int? page)
+        public ActionResult get_thongbaonganh(int? page)
         {
             // 1. Tham số int? dùng để thể hiện null và kiểu int
             // page có thể có giá trị là null và kiểu int.
@@ -33,12 +26,12 @@ namespace Nganhtinhoc.Controllers
 
             // 3. Tạo truy vấn, lưu ý phải sắp xếp theo trường nào đó, ví dụ OrderBy
             // theo LinkID mới có thể phân trang.
-            var links = (from l in db.Thongbaotruong
+            var links = (from l in db.Thongbao
                          orderby l.id descending
                          select l);
 
             // 4. Tạo kích thước trang (pageSize) hay là số Link hiển thị trên 1 trang
-            int pageSize = 3;
+            int pageSize = 5;
 
             // 4.1 Toán tử ?? trong C# mô tả nếu page khác null thì lấy giá trị page, còn
             // nếu page = null thì lấy giá trị 1 cho biến pageNumber.
@@ -49,14 +42,6 @@ namespace Nganhtinhoc.Controllers
             //var v = from f in db.Thongbaotruong
             //        select f;
             //return PartialView(v.ToList());
-        }
-        public ActionResult get_chitietthongbaonganh(String meta)
-        {
-            var v = from f in db.Thongbao
-                    where f.meta == meta
-                    orderby f.id descending
-                    select f;
-            return PartialView(v.ToList());
         }
     }
 }

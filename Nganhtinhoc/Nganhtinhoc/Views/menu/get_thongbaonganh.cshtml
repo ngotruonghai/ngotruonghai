@@ -1,0 +1,26 @@
+﻿@model PagedList.IPagedList<Nganhtinhoc.Models.Thongbao>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "get_thongbaonganh";
+    Layout = "~/Views/Shared/detail_layout.cshtml";
+}
+<div class="single_post_content">
+    <h2 style="margin-top:25px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><span>Thông Báo Trường</span></h2>
+    <div class="container">
+        @foreach (var i in Model)
+        {
+            <div class="row">
+                <h3 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"><strong> @i.tieude</strong></h3>
+                <div class="row"> <p style="float:right;margin-right:40px">@i.ngay</p></div>
+                <div class="row">
+                    <a href="/thong-bao-nganh/@i.meta" style="float:right;color:deepskyblue;margin-right:40px">Chi tiết...</a>
+                </div>
+            </div>
+            <hr style="border-bottom:solid 1px" />
+        }
+        Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("get_thongbaonganh", "menu", new { page }))
+    </div>
+</div>
