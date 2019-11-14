@@ -2732,7 +2732,7 @@
     <Content Include="Views\Home1\get_tailieu.cshtml" />
     <Content Include="Views\Home1\get_giaovien.cshtml" />
     <Content Include="Views\Home1\get_thongbaonganh.cshtml" />
-    <Content Include="Views\Home1\get_chitietthongbaonganh.cshtml" />
+    <Content Include="Views\detail\get_chitietthongbaonganh.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

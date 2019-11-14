@@ -14,7 +14,7 @@ namespace Nganhtinhoc
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             /*Home1-thông báo ngành ul li*/
             routes.MapRoute("get_thongbaonganh", "{type}/{meta}",
-          new { controller = "Home1", action = "get_chitietthongbaonganh",meta=UrlParameter.Optional },
+          new { controller = "detail", action = "get_chitietthongbaonganh",meta=UrlParameter.Optional },
           new RouteValueDictionary
           {
                 { "type", "thong-bao-nganh" }

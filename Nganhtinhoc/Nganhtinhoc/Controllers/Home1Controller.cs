@@ -67,13 +67,5 @@ namespace Nganhtinhoc.Controllers
                      select f).Take(6);
             return PartialView(v.ToList());
         }
-        public ActionResult get_chitietthongbaonganh(String meta)
-        {
-            var v = from f in db.Thongbao
-                    where f.meta==meta
-                    orderby f.id descending
-                    select f;
-            return PartialView(v.ToList());
-        }
     }
 }
