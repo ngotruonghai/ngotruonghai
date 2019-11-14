@@ -25,16 +25,15 @@ namespace Nganhtinhoc.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Diemsinhvien> Diemsinhviens { get; set; }
-        public virtual DbSet<Giaovien> Giaoviens { get; set; }
-        public virtual DbSet<Nganh> Nganhs { get; set; }
-        public virtual DbSet<Sinhvien> Sinhviens { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Taikhoan> Taikhoans { get; set; }
-        public virtual DbSet<Tailieu> Tailieux { get; set; }
-        public virtual DbSet<Thoikhoabieu> Thoikhoabieux { get; set; }
-        public virtual DbSet<Thongbao> Thongbaos { get; set; }
-        public virtual DbSet<Thongbaotruong> Thongbaotruongs { get; set; }
-        public virtual DbSet<Tuyendung> Tuyendungs { get; set; }
+        public virtual DbSet<Diemsinhvien> Diemsinhvien { get; set; }
+        public virtual DbSet<Giaovien> Giaovien { get; set; }
+        public virtual DbSet<Nganh> Nganh { get; set; }
+        public virtual DbSet<Sinhvien> Sinhvien { get; set; }
+        public virtual DbSet<Taikhoan> Taikhoan { get; set; }
+        public virtual DbSet<Tailieu> Tailieu { get; set; }
+        public virtual DbSet<Tuyendung> Tuyendung { get; set; }
+        public virtual DbSet<Thoikhoabieu> Thoikhoabieu { get; set; }
+        public virtual DbSet<Thongbao> Thongbao { get; set; }
+        public virtual DbSet<Thongbaotruong> Thongbaotruong { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Nganhtinhoc.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Giaovien()
         {
-            this.Tailieux = new HashSet<Tailieu>();
+            this.Tailieu = new HashSet<Tailieu>();
         }
     
         public string magiaovien { get; set; }
@@ -27,6 +27,6 @@ namespace Nganhtinhoc.Models
     
         public virtual Nganh Nganh { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tailieu> Tailieux { get; set; }
+        public virtual ICollection<Tailieu> Tailieu { get; set; }
     }
 }

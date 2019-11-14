@@ -20,7 +20,7 @@ namespace Nganhtinhoc.Areas.admin.Models
         // GET: admin/Thongbaos1
         public ActionResult Index()
         {
-            return View(db.Thongbaos.ToList());
+            return View(db.Thongbao.ToList());
         }
 
         // GET: admin/Thongbaos1/Details/5
@@ -30,7 +30,7 @@ namespace Nganhtinhoc.Areas.admin.Models
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Thongbao thongbao = db.Thongbaos.Find(id);
+            Thongbao thongbao = db.Thongbao.Find(id);
             if (thongbao == null)
             {
                 return HttpNotFound();
@@ -71,7 +71,7 @@ namespace Nganhtinhoc.Areas.admin.Models
                 }
                 thongbao.ngay = DateTime.Now;
                 thongbao.meta = Functions.ConvertToUnSign(thongbao.meta); //convert Tiếng Việt không dấu
-                db.Thongbaos.Add(thongbao);
+                db.Thongbao.Add(thongbao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -86,7 +86,7 @@ namespace Nganhtinhoc.Areas.admin.Models
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Thongbao thongbao = db.Thongbaos.Find(id);
+            Thongbao thongbao = db.Thongbao.Find(id);
             if (thongbao == null)
             {
                 return HttpNotFound();
@@ -141,7 +141,7 @@ namespace Nganhtinhoc.Areas.admin.Models
         }
         public Thongbao getById(long id)
         {
-            return db.Thongbaos.Where(x => x.id == id).FirstOrDefault();
+            return db.Thongbao.Where(x => x.id == id).FirstOrDefault();
 
         }
         // GET: admin/Thongbaos1/Delete/5
@@ -151,7 +151,7 @@ namespace Nganhtinhoc.Areas.admin.Models
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Thongbao thongbao = db.Thongbaos.Find(id);
+            Thongbao thongbao = db.Thongbao.Find(id);
             if (thongbao == null)
             {
                 return HttpNotFound();
@@ -164,8 +164,8 @@ namespace Nganhtinhoc.Areas.admin.Models
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Thongbao thongbao = db.Thongbaos.Find(id);
-            db.Thongbaos.Remove(thongbao);
+            Thongbao thongbao = db.Thongbao.Find(id);
+            db.Thongbao.Remove(thongbao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -40,16 +40,6 @@
     <Property Name="pass" Type="nvarchar" MaxLength="20" />
     <Property Name="meta" Type="nvarchar(max)" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="Taikhoan">
     <Key>
       <PropertyRef Name="tk" />
@@ -66,6 +56,17 @@
     <Property Name="text" Type="nvarchar(max)" />
     <Property Name="file" Type="nvarchar(max)" />
     <Property Name="magiaovien" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Tuyendung">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="img" Type="nvarchar" MaxLength="150" />
+    <Property Name="tieude" Type="nvarchar" MaxLength="150" />
+    <Property Name="vanban" Type="nvarchar(max)" />
+    <Property Name="meta" Type="nvarchar" MaxLength="150" />
+    <Property Name="hide" Type="bit" />
   </EntityType>
   <EntityType Name="Thoikhoabieu">
     <Key>
@@ -102,17 +103,6 @@
     <Property Name="tieude" Type="nvarchar" MaxLength="150" />
     <Property Name="vanban" Type="nvarchar(max)" />
     <Property Name="ngay" Type="date" />
-    <Property Name="hide" Type="bit" />
-  </EntityType>
-  <EntityType Name="Tuyendung">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="img" Type="nvarchar" MaxLength="150" />
-    <Property Name="tieude" Type="nvarchar" MaxLength="150" />
-    <Property Name="vanban" Type="nvarchar(max)" />
-    <Property Name="meta" Type="nvarchar" MaxLength="150" />
     <Property Name="hide" Type="bit" />
   </EntityType>
   <Association Name="FK_Diemsinhvien_Sinhvien">
@@ -180,13 +170,12 @@
     <EntitySet Name="Giaovien" EntityType="Self.Giaovien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Nganh" EntityType="Self.Nganh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tailieu" EntityType="Self.Tailieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thongbao" EntityType="Self.Thongbao" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thongbaotruong" EntityType="Self.Thongbaotruong" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Diemsinhvien_Sinhvien" Association="Self.FK_Diemsinhvien_Sinhvien">
       <End Role="Sinhvien" EntitySet="Sinhvien" />
       <End Role="Diemsinhvien" EntitySet="Diemsinhvien" />

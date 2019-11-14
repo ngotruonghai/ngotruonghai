@@ -178,9 +178,6 @@
     <Compile Include="Models\Sinhvien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Taikhoan.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2685,6 +2682,12 @@
     <Content Include="Areas\admin\content\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\admin\Views\Shared\login_layout.cshtml" />
     <Content Include="Areas\admin\Views\login1\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Thongbao1s\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Home\Index.cshtml" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -2692,12 +2695,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\admin\Views\Thongbao1s\Create.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao1s\Delete.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao1s\Details.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao1s\Edit.cshtml" />
-    <Content Include="Areas\admin\Views\Thongbao1s\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2709,7 +2706,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -2732,11 +2731,14 @@
     <Content Include="Views\detail\get_chitietTBT.cshtml" />
     <Content Include="Views\Home1\get_tailieu.cshtml" />
     <Content Include="Views\Home1\get_giaovien.cshtml" />
+    <Content Include="Views\Home1\get_thongbaonganh.cshtml" />
+    <Content Include="Views\Home1\get_chitietthongbaonganh.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
     <Folder Include="Areas\admin\Views\basee\" />
+    <Folder Include="Content\upload\img\thongbaotruong\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

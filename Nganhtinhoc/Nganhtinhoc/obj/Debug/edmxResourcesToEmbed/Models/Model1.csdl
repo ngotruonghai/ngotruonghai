@@ -23,7 +23,7 @@
     <Property Name="tengiaovien" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="pass" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Nganh" Relationship="Self.FK_Giaovien_Nganh" FromRole="Giaovien" ToRole="Nganh" />
-    <NavigationProperty Name="Tailieux" Relationship="Self.FK_Tailieu_Giaovien" FromRole="Giaovien" ToRole="Tailieu" />
+    <NavigationProperty Name="Tailieu" Relationship="Self.FK_Tailieu_Giaovien" FromRole="Giaovien" ToRole="Tailieu" />
   </EntityType>
   <EntityType Name="Nganh">
     <Key>
@@ -32,9 +32,9 @@
     <Property Name="manganh" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="tennganh" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="khoahoc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Giaoviens" Relationship="Self.FK_Giaovien_Nganh" FromRole="Nganh" ToRole="Giaovien" />
-    <NavigationProperty Name="Sinhviens" Relationship="Self.FK_Sinhvien_Nganh" FromRole="Nganh" ToRole="Sinhvien" />
-    <NavigationProperty Name="Thoikhoabieux" Relationship="Self.FK_Thoikhoabieu_Nganh" FromRole="Nganh" ToRole="Thoikhoabieu" />
+    <NavigationProperty Name="Giaovien" Relationship="Self.FK_Giaovien_Nganh" FromRole="Nganh" ToRole="Giaovien" />
+    <NavigationProperty Name="Sinhvien" Relationship="Self.FK_Sinhvien_Nganh" FromRole="Nganh" ToRole="Sinhvien" />
+    <NavigationProperty Name="Thoikhoabieu" Relationship="Self.FK_Thoikhoabieu_Nganh" FromRole="Nganh" ToRole="Thoikhoabieu" />
   </EntityType>
   <EntityType Name="Sinhvien">
     <Key>
@@ -45,18 +45,8 @@
     <Property Name="tensinhvien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Diemsinhviens" Relationship="Self.FK_Diemsinhvien_Sinhvien" FromRole="Sinhvien" ToRole="Diemsinhvien" />
+    <NavigationProperty Name="Diemsinhvien" Relationship="Self.FK_Diemsinhvien_Sinhvien" FromRole="Sinhvien" ToRole="Diemsinhvien" />
     <NavigationProperty Name="Nganh" Relationship="Self.FK_Sinhvien_Nganh" FromRole="Sinhvien" ToRole="Nganh" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Taikhoan">
     <Key>
@@ -75,6 +65,17 @@
     <Property Name="file" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="magiaovien" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Giaovien" Relationship="Self.FK_Tailieu_Giaovien" FromRole="Tailieu" ToRole="Giaovien" />
+  </EntityType>
+  <EntityType Name="Tuyendung">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="tieude" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="vanban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="meta" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="hide" Type="Boolean" />
   </EntityType>
   <EntityType Name="Thoikhoabieu">
     <Key>
@@ -112,17 +113,6 @@
     <Property Name="tieude" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="vanban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ngay" Type="DateTime" Precision="0" />
-    <Property Name="hide" Type="Boolean" />
-  </EntityType>
-  <EntityType Name="Tuyendung">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="tieude" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="vanban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="meta" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="hide" Type="Boolean" />
   </EntityType>
   <Association Name="FK_Diemsinhvien_Sinhvien">
@@ -186,36 +176,35 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="NTHEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Diemsinhviens" EntityType="Self.Diemsinhvien" />
-    <EntitySet Name="Giaoviens" EntityType="Self.Giaovien" />
-    <EntitySet Name="Nganhs" EntityType="Self.Nganh" />
-    <EntitySet Name="Sinhviens" EntityType="Self.Sinhvien" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Taikhoans" EntityType="Self.Taikhoan" />
-    <EntitySet Name="Tailieux" EntityType="Self.Tailieu" />
-    <EntitySet Name="Thoikhoabieux" EntityType="Self.Thoikhoabieu" />
-    <EntitySet Name="Thongbaos" EntityType="Self.Thongbao" />
-    <EntitySet Name="Thongbaotruongs" EntityType="Self.Thongbaotruong" />
-    <EntitySet Name="Tuyendungs" EntityType="Self.Tuyendung" />
+    <EntitySet Name="Diemsinhvien" EntityType="Self.Diemsinhvien" />
+    <EntitySet Name="Giaovien" EntityType="Self.Giaovien" />
+    <EntitySet Name="Nganh" EntityType="Self.Nganh" />
+    <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" />
+    <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" />
+    <EntitySet Name="Tailieu" EntityType="Self.Tailieu" />
+    <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" />
+    <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" />
+    <EntitySet Name="Thongbao" EntityType="Self.Thongbao" />
+    <EntitySet Name="Thongbaotruong" EntityType="Self.Thongbaotruong" />
     <AssociationSet Name="FK_Diemsinhvien_Sinhvien" Association="Self.FK_Diemsinhvien_Sinhvien">
-      <End Role="Sinhvien" EntitySet="Sinhviens" />
-      <End Role="Diemsinhvien" EntitySet="Diemsinhviens" />
+      <End Role="Sinhvien" EntitySet="Sinhvien" />
+      <End Role="Diemsinhvien" EntitySet="Diemsinhvien" />
     </AssociationSet>
     <AssociationSet Name="FK_Giaovien_Nganh" Association="Self.FK_Giaovien_Nganh">
-      <End Role="Nganh" EntitySet="Nganhs" />
-      <End Role="Giaovien" EntitySet="Giaoviens" />
+      <End Role="Nganh" EntitySet="Nganh" />
+      <End Role="Giaovien" EntitySet="Giaovien" />
     </AssociationSet>
     <AssociationSet Name="FK_Tailieu_Giaovien" Association="Self.FK_Tailieu_Giaovien">
-      <End Role="Giaovien" EntitySet="Giaoviens" />
-      <End Role="Tailieu" EntitySet="Tailieux" />
+      <End Role="Giaovien" EntitySet="Giaovien" />
+      <End Role="Tailieu" EntitySet="Tailieu" />
     </AssociationSet>
     <AssociationSet Name="FK_Sinhvien_Nganh" Association="Self.FK_Sinhvien_Nganh">
-      <End Role="Nganh" EntitySet="Nganhs" />
-      <End Role="Sinhvien" EntitySet="Sinhviens" />
+      <End Role="Nganh" EntitySet="Nganh" />
+      <End Role="Sinhvien" EntitySet="Sinhvien" />
     </AssociationSet>
     <AssociationSet Name="FK_Thoikhoabieu_Nganh" Association="Self.FK_Thoikhoabieu_Nganh">
-      <End Role="Nganh" EntitySet="Nganhs" />
-      <End Role="Thoikhoabieu" EntitySet="Thoikhoabieux" />
+      <End Role="Nganh" EntitySet="Nganh" />
+      <End Role="Thoikhoabieu" EntitySet="Thoikhoabieu" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
