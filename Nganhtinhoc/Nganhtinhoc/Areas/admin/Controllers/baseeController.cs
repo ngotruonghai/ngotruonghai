@@ -16,7 +16,9 @@ namespace Nganhtinhoc.Areas.admin.Controllers
                 var result = (loginMD)Session[Common.User_session];
                 if (result == null)
                 {
-                    filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(new { Controller = "login1", action = "Index", Areas = "admin" }));
+                    filterContext.Result = new RedirectToRouteResult
+                        (new System.Web.Routing.RouteValueDictionary(new
+                        { Controller = "login1", action = "Index", Areas = "admin" }));
                 }
             }
             base.OnActionExecuting(filterContext);
