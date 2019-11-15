@@ -12,7 +12,15 @@ namespace Nganhtinhoc
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            /*Home1-thông báo ngành ul li*/
+            /*menu-thông báo ngành*/
+            routes.MapRoute("menu", "{type}",
+         new { controller = "menu", action = "get_thongbaonganh" },
+         new RouteValueDictionary
+         {
+                { "type", "thong-bao-nganh" }
+         },
+         namespaces: new[] { "Nganhtinhoc.Controllers" });
+            /*detail-chi tiết thông báo ngành*/
             routes.MapRoute("get_thongbaonganh", "{type}/{meta}",
           new { controller = "detail", action = "get_chitietthongbaonganh",meta=UrlParameter.Optional },
           new RouteValueDictionary

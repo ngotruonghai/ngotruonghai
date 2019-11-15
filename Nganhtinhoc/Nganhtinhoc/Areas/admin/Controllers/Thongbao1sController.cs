@@ -67,7 +67,7 @@ namespace Nganhtinhoc.Areas.admin.Models
                 // temp.datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());    
                 else
                 {
-                    thongbao.img = "";
+                    thongbao.img = "tdt.png";
                 }
                 thongbao.ngay = DateTime.Now;
                 thongbao.meta = Functions.ConvertToUnSign(thongbao.meta); //convert Tiếng Việt không dấu
