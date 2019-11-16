@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Sinhvien>
+
+@{
+    ViewBag.Title = "get_masv";
+    Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
+}
+<div class="container">
+</div>
+<div class="card-body">
+    <div class="table-responsive">
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="col-sm-12">
+                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tên: kích hoạt để sắp xếp cột giảm dần" style="width: 163px;">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Mã sinh viên</font>
+                                </font>
+                            </th>
+                            <th>Tên sinh viên</th>
+                            <th style="width:80px">Chức năng</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model)
+                        {
+                            <tr role="row" class="odd">
+                                <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.masinhvien</font></font></td>
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><img src="~/Content/upload/img/thongbao/@i.img" width="100px" /></font></font></td>*@
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.tensinhvien</font></font></td>
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@(i.hide.GetValueOrDefault(false) ? "Hiển thị" : "Ẩn")</font></font></td>*@
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 34.000</font></font></td>*@
+                                <td>  @Html.ActionLink("Thêm", "Create", "Diemsinhviens", new { msv = i.masinhvien,ten=i.tensinhvien }, new { @class = "btn btn-primary" })</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

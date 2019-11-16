@@ -2707,6 +2707,7 @@
     <Content Include="Areas\admin\Views\Diemsinhviens\Details.cshtml" />
     <Content Include="Areas\admin\Views\Diemsinhviens\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Diemsinhviens\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Diemsinhviens\get_masv.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

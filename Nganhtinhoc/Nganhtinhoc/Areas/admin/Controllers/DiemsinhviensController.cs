@@ -10,17 +10,22 @@ using Nganhtinhoc.Models;
 
 namespace Nganhtinhoc.Areas.admin.Controllers
 {
-    public class DiemsinhviensController : baseeController
+    public class DiemsinhviensController : Controller
     {
         private NTHEntities db = new NTHEntities();
-
+        String h;
         // GET: admin/Diemsinhviens
         public ActionResult Index()
         {
             var diemsinhvien = db.Diemsinhvien.Include(d => d.Sinhvien);
             return View(diemsinhvien.ToList());
         }
-
+        public ActionResult get_masv()
+        {
+            var v = from f in db.Sinhvien
+                    select f;
+            return PartialView(v.ToList());
+        }
         // GET: admin/Diemsinhviens/Details/5
         public ActionResult Details(int? id)
         {
@@ -35,11 +40,11 @@ namespace Nganhtinhoc.Areas.admin.Controllers
             }
             return View(diemsinhvien);
         }
-
         // GET: admin/Diemsinhviens/Create
-        public ActionResult Create()
+        public ActionResult Create(String msv,string ten)
         {
-            ViewBag.masinhvien = new SelectList(db.Sinhvien, "masinhvien", "manganh");
+            ViewBag.masinhvien = msv;
+            ViewBag.ten = ten;
             return View();
         }
 
@@ -48,26 +53,28 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,masinhvien,monhoc,dieml1,dieml2,dieml3,dieml4,kq")] Diemsinhvien diemsinhvien)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "id,masinhvien,monhoc,dieml1,dieml2,dieml3,dieml4,kq")] Diemsinhvien diemsinhvien,string m)
         {
-                if (ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                double D = double.Parse((((diemsinhvien.dieml1 + diemsinhvien.dieml2 + diemsinhvien.dieml3) * 0.3) + (diemsinhvien.dieml4 * 0.6)).ToString());
+                if (D > 5)
                 {
-                    double D = double.Parse((((diemsinhvien.dieml1 + diemsinhvien.dieml2 + diemsinhvien.dieml3) * 0.3) + (diemsinhvien.dieml4 * 0.6)).ToString());
-                    if (D > 5)
-                    {
-                        diemsinhvien.kq = "Đậu";
-                    }
-                    else
-                    {
-                        diemsinhvien.kq = "F";
-                    }
-                    db.Diemsinhvien.Add(diemsinhvien);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
+                    diemsinhvien.kq = "Đậu";
                 }
+                else
+                {
+                    diemsinhvien.kq = "F";
+                }
+                diemsinhvien.masinhvien =m;
+                db.Diemsinhvien.Add(diemsinhvien);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-                ViewBag.masinhvien = new SelectList(db.Sinhvien, "masinhvien", "manganh", diemsinhvien.masinhvien);
-                return View(diemsinhvien);
+            ViewBag.masinhvien = new SelectList(db.Sinhvien, "masinhvien", "manganh", diemsinhvien.masinhvien);
+            return View(diemsinhvien);
         }
 
         // GET: admin/Diemsinhviens/Edit/5
