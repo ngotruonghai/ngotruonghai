@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Diemsinhvien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.monhoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dieml1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dieml2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dieml3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dieml4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kq)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sinhvien.manganh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.monhoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dieml1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dieml2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dieml3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dieml4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kq)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sinhvien.manganh)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

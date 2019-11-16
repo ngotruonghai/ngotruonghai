@@ -4,13 +4,13 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="masinhvien" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
     <Property Name="monhoc" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-    <Property Name="dieml1" Type="Int32" />
-    <Property Name="dieml2" Type="Int32" />
-    <Property Name="dieml3" Type="Int32" />
-    <Property Name="dieml4" Type="Int32" />
+    <Property Name="dieml1" Type="Double" />
+    <Property Name="dieml2" Type="Double" />
+    <Property Name="dieml3" Type="Double" />
+    <Property Name="dieml4" Type="Double" />
     <Property Name="kq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Sinhvien" Relationship="Self.FK_Diemsinhvien_Sinhvien" FromRole="Diemsinhvien" ToRole="Sinhvien" />
   </EntityType>
@@ -47,6 +47,16 @@
     <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Diemsinhvien" Relationship="Self.FK_Diemsinhvien_Sinhvien" FromRole="Sinhvien" ToRole="Diemsinhvien" />
     <NavigationProperty Name="Nganh" Relationship="Self.FK_Sinhvien_Nganh" FromRole="Sinhvien" ToRole="Nganh" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Taikhoan">
     <Key>
@@ -180,6 +190,7 @@
     <EntitySet Name="Giaovien" EntityType="Self.Giaovien" />
     <EntitySet Name="Nganh" EntityType="Self.Nganh" />
     <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" />
     <EntitySet Name="Tailieu" EntityType="Self.Tailieu" />
     <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" />

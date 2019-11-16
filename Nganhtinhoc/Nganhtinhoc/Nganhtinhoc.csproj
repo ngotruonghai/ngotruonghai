@@ -139,6 +139,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\baseeController.cs" />
+    <Compile Include="Areas\admin\Controllers\DiemsinhviensController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
     <Compile Include="Areas\admin\Controllers\Thongbao1sController.cs" />
@@ -177,6 +178,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sinhvien.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Taikhoan.cs">
@@ -2698,6 +2702,11 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\admin\Views\Diemsinhviens\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Diemsinhviens\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Diemsinhviens\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Diemsinhviens\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Diemsinhviens\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

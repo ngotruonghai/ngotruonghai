@@ -4,13 +4,13 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="masinhvien" Type="varchar" MaxLength="12" />
     <Property Name="monhoc" Type="nvarchar" MaxLength="150" />
-    <Property Name="dieml1" Type="int" />
-    <Property Name="dieml2" Type="int" />
-    <Property Name="dieml3" Type="int" />
-    <Property Name="dieml4" Type="int" />
+    <Property Name="dieml1" Type="float" />
+    <Property Name="dieml2" Type="float" />
+    <Property Name="dieml3" Type="float" />
+    <Property Name="dieml4" Type="float" />
     <Property Name="kq" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Giaovien">
@@ -39,6 +39,16 @@
     <Property Name="tensinhvien" Type="nvarchar" MaxLength="50" />
     <Property Name="pass" Type="nvarchar" MaxLength="20" />
     <Property Name="meta" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Taikhoan">
     <Key>
@@ -170,6 +180,7 @@
     <EntitySet Name="Giaovien" EntityType="Self.Giaovien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Nganh" EntityType="Self.Nganh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sinhvien" EntityType="Self.Sinhvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Taikhoan" EntityType="Self.Taikhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tailieu" EntityType="Self.Tailieu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tuyendung" EntityType="Self.Tuyendung" Schema="dbo" store:Type="Tables" />

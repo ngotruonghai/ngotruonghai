@@ -12,17 +12,12 @@ namespace Nganhtinhoc.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Diemsinhvien
+    public partial class sysdiagrams
     {
-        public int id { get; set; }
-        public string masinhvien { get; set; }
-        public string monhoc { get; set; }
-        public Nullable<double> dieml1 { get; set; }
-        public Nullable<double> dieml2 { get; set; }
-        public Nullable<double> dieml3 { get; set; }
-        public Nullable<double> dieml4 { get; set; }
-        public string kq { get; set; }
-    
-        public virtual Sinhvien Sinhvien { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

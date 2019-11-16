@@ -39,5 +39,11 @@ namespace Nganhtinhoc.Areas.admin.Controllers
             }
             return View(model);
         }
+        [HttpGet]
+        public ActionResult logout()
+        {
+            Session[Common.User_session] = null;
+            return Redirect("/nganh-tin-hoc");
+        }
     }
 }
