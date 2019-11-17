@@ -54,10 +54,14 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create([Bind(Include = "id,masinhvien,monhoc,dieml1,dieml2,dieml3,dieml4,kq")] Diemsinhvien diemsinhvien,string m)
+        public ActionResult Create([Bind(Include = "id,masinhvien,monhoc,dieml1,dieml2,dieml3,dieml4,kq")] Diemsinhvien diemsinhvien,string m,int s1,int s21,int s22,int t)
         {
             if (ModelState.IsValid)
             {
+                diemsinhvien.dieml1 = s1;
+                diemsinhvien.dieml2 = s21;
+                diemsinhvien.dieml3 = s22;
+                diemsinhvien.dieml4 = t;
                 double D = double.Parse((((diemsinhvien.dieml1 + diemsinhvien.dieml2 + diemsinhvien.dieml3) * 0.3) + (diemsinhvien.dieml4 * 0.6)).ToString());
                 if (D > 5)
                 {
