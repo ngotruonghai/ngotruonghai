@@ -28,6 +28,7 @@ namespace Nganhtinhoc.Controllers
             // theo LinkID mới có thể phân trang.
             var links = (from l in db.Thongbao
                          orderby l.id descending
+                         where l.hide == true
                          select l);
 
             // 4. Tạo kích thước trang (pageSize) hay là số Link hiển thị trên 1 trang

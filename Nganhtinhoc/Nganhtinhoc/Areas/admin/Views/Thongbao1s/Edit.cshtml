@@ -121,13 +121,12 @@
             <div class="form-group">
                 <div class="col-md-10">
                     <div class="checkbox">
-                        @Html.Label("Hiển thị", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
 
                             @{
                                 bool hide = true;
                             }
-                            <p> @Html.CheckBoxFor(model => hide)</p>
+                            <p>Hiển thị: @Html.CheckBoxFor(model => hide)</p>
 
                         </div>
                     </div>

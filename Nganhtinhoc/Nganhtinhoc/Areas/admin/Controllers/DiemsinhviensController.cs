@@ -10,7 +10,7 @@ using Nganhtinhoc.Models;
 
 namespace Nganhtinhoc.Areas.admin.Controllers
 {
-    public class DiemsinhviensController : Controller
+    public class DiemsinhviensController : baseeController
     {
         private NTHEntities db = new NTHEntities();
         String h;

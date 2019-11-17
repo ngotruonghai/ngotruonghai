@@ -10,61 +10,53 @@
 <p>
     @Html.ActionLink("Thêm mới", "get_masv", "Diemsinhviens")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.monhoc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dieml1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dieml2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dieml3)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dieml4)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.kq)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sinhvien.manganh)
-        </th>
-        <th></th>
-    </tr>
+<div class="card-body">
+    <div class="table-responsive">
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="col-sm-12">
+                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th>MSSV</th>
+                            <th>Môn Học</th>
+                            <th>Điểm HS1 L1</th>
+                            <th>Điểm HS2 L1</th>
+                            <th>Điểm HS2 L2</th>
+                            <th>Điểm thi</th>
+                            <th>Kết quả</th>
+                            <th style="width:80px">Chức năng</th>
+                        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.masinhvien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dieml1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dieml2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dieml3)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dieml4)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.kq)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sinhvien.manganh)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model)
+                        {
+                        <tr role="row" class="odd">
+                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.masinhvien</font></font></td>
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.monhoc</font></font></td>
+                            @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><img src="~/Content/upload/img/thongbao/@i.img" width="100px" /></font></font></td>*@
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml1</font></font></td>
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml2</font></font></td>
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml3</font></font></td>
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml4</font></font></td>
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.kq</font></font></td>
+                            @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@(i.hide.GetValueOrDefault(false) ? "Hiển thị" : "Ẩn")</font></font></td>*@
+                            <td>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">
+                                        @Html.ActionLink(" ", "Edit", new { id = i.id }, new { @class = "fas fa-pen", @Style = "color:	#00BFFF;" })@*&ensp;&ensp;*@
+                                        @Html.ActionLink(" ", "Details", new { id = i.id }, new { @class = "fas fa-eye", @Style = "color:#0033CC	;" })@*&ensp;&ensp;*@
+                                        @Html.ActionLink(" ", "Delete", new { id = i.id }, new { @class = "fas fa-trash", @Style = "color:#980000 	;" })
+                                    </font>
+                                </font>
+                            </td>
+                            @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 34.000</font></font></td>*@
+                        </tr>
+                        }
 
-</table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
