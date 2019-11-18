@@ -1,0 +1,59 @@
+﻿@model Nganhtinhoc.Models.Tuyendung
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tuyendung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.img)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tieude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tieude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vanban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vanban)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.meta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.meta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hide)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hide)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

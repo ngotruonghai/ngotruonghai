@@ -143,6 +143,7 @@
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
     <Compile Include="Areas\admin\Controllers\Thongbao1sController.cs" />
+    <Compile Include="Areas\admin\Controllers\TuyendungsController.cs" />
     <Compile Include="Controllers\detailController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2712,6 +2713,11 @@
     <Content Include="Areas\admin\Views\Diemsinhviens\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Diemsinhviens\Index.cshtml" />
     <Content Include="Areas\admin\Views\Diemsinhviens\get_masv.cshtml" />
+    <Content Include="Areas\admin\Views\Tuyendungs\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Tuyendungs\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Tuyendungs\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Tuyendungs\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Tuyendungs\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
