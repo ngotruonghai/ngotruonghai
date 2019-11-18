@@ -67,5 +67,13 @@ namespace Nganhtinhoc.Controllers
                      select f).Take(6);
             return PartialView(v.ToList());
         }
+        public ActionResult get_tuyendung()
+        {
+            var v = (from f in db.Tuyendung
+                     where f.hide == true
+                     orderby f.id descending
+                     select f).Take(6);
+            return PartialView(v.ToList());
+        }
     }
 }
