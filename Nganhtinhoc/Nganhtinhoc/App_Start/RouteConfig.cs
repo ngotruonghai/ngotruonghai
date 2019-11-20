@@ -11,7 +11,7 @@ namespace Nganhtinhoc
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");         
             /*menu-tuyển dụng*/
             routes.MapRoute("get_uuendung", "{type}",
          new { controller = "menu", action = "get_uuendung" },
@@ -20,6 +20,14 @@ namespace Nganhtinhoc
                 { "type", "tuyen_dung" }
          },
          namespaces: new[] { "Nganhtinhoc.Controllers" });
+            /*detail tuyển dụng*/
+            routes.MapRoute("get_tuyendung", "{type}/{meta}",
+                new { Controller = "detail", action = "get_tuyendung", meta = UrlParameter.Optional },
+                new RouteValueDictionary
+                {
+                    { "type", "tuyen_dung"}
+                },
+                namespaces: new[] { "Nganhtinhoc.Controllers" });
             /*menu-thông báo ngành*/
             routes.MapRoute("menu", "{type}",
          new { controller = "menu", action = "get_thongbaonganh" },

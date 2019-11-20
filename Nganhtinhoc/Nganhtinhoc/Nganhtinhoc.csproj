@@ -2759,6 +2759,7 @@
     <Content Include="Views\menu\get_thongbaonganh.cshtml" />
     <Content Include="Views\Home1\get_tuyendung.cshtml" />
     <Content Include="Views\menu\get_uuendung.cshtml" />
+    <Content Include="Views\detail\get_tuyendung.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

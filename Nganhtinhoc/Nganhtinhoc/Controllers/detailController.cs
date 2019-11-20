@@ -58,5 +58,12 @@ namespace Nganhtinhoc.Controllers
                     select f;
             return PartialView(v.ToList());
         }
+        public ActionResult get_tuyendung(string meta)
+        {
+            var v = from f in db.Tuyendung
+                    where f.meta == meta
+                    select f;
+            return View(v.ToList());
+        }
     }
 }

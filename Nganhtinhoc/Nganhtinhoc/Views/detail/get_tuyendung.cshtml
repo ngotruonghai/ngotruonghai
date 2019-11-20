@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Tuyendung>
+
+@{
+    ViewBag.Title = "get_tuyendung";
+    Layout = "~/Views/Shared/detail_layout.cshtml";
+}
+@foreach(var i in Model)
+{
+    @i.tieude
+}
