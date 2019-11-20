@@ -44,5 +44,17 @@ namespace Nganhtinhoc.Controllers
             //        select f;
             //return PartialView(v.ToList());
         }
+        public ActionResult get_uuendung(int ? page)
+        {
+            if (page == null)
+                page = 1;
+            var v = (from f in db.Tuyendung
+                     where f.hide == true
+                     orderby f.id descending
+                     select f);
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return PartialView(v.ToPagedList(pageNumber, pageSize));
+        }
     }
 }
