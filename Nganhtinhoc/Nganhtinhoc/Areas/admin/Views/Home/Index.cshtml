@@ -3,130 +3,18 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
-@*<div class="card-body">
-    <div class="table-responsive">
-        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
-            <div class="col-sm-12">
-                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                    <thead>
-                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tên: kích hoạt để sắp xếp cột giảm dần" style="width: 163px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tên</font></font></th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Vị trí: kích hoạt để sắp xếp cột tăng dần" style="width: 220px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chức vụ</font></font></th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: kích hoạt để sắp xếp cột tăng dần" style="width: 117px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Văn phòng</font></font></th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Tuổi: kích hoạt để sắp xếp cột tăng dần" style="width: 78px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tuổi tác</font></font></th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Ngày bắt đầu: kích hoạt để sắp xếp cột tăng dần" style="width: 132px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ngày bắt đầu</font></font></th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Mức lương: kích hoạt để sắp xếp cột tăng dần" style="width: 105px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lương</font></font></th></tr>
-                    </thead>
-                    <tbody>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Quinn Flynn</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hỗ trợ lãnh đạo</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Edinburgh</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">22</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2013/03/03</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 34.000</font></font></td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rhona Davidson</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chuyên gia tích hợp</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tokyo</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">55</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2010/10/14</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">327.900 đô la</font></font></td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sakura Yamamoto</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kỹ sư hỗ trợ</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tokyo</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">37</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2009/08/19</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">139.575 đô la</font></font></td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Serge hói</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Điều phối dữ liệu</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Singapore</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">64</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2012/04/09</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 138,575</font></font></td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shad Decker</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giám đốc khu vực</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Edinburgh</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">51</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2008/11/13</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 183.000</font></font></td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Shou Itou</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tiếp thị khu vực</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tokyo</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2011/08/14</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 163.000</font></font></td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sonya Frost</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kỹ sư phần mềm</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Edinburgh</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">23</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2008/12/13</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 103,600</font></font></td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suki Burks</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhà phát triển</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">London</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">53</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2009/10/22</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 114.500</font></font></td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tatyana Fitzpatrick</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giám đốc khu vực</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">London</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2010/03/17</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 385,750</font></font></td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thor Walton</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhà phát triển</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Newyork</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">61</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2013/08/11</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 98,540</font></font></td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sonya Frost</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kỹ sư phần mềm</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Edinburgh</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">23</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2008/12/13</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 103,600</font></font></td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Suki Burks</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhà phát triển</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">London</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">53</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2009/10/22</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 114.500</font></font></td>
-                        </tr>
-                        <tr role="row" class="odd">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tatyana Fitzpatrick</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giám đốc khu vực</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">London</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2010/03/17</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 385,750</font></font></td>
-                        </tr>
-                        <tr role="row" class="even">
-                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thor Walton</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhà phát triển</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Newyork</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">61</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2013/08/11</font></font></td>
-                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 98,540</font></font></td>
-                        </tr>
-                    </tbody>
-                </table>
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-danger shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
             </div>
         </div>
     </div>
-</div>*@
+</div>
