@@ -2700,13 +2700,6 @@
     <Content Include="Areas\admin\Views\Thongbao1s\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Thongbao1s\Index.cshtml" />
     <Content Include="Areas\admin\Views\Home\Index.cshtml" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\admin\Views\Diemsinhviens\Create.cshtml" />
     <Content Include="Areas\admin\Views\Diemsinhviens\Delete.cshtml" />
     <Content Include="Areas\admin\Views\Diemsinhviens\Details.cshtml" />
@@ -2718,6 +2711,13 @@
     <Content Include="Areas\admin\Views\Tuyendungs\Details.cshtml" />
     <Content Include="Areas\admin\Views\Tuyendungs\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Tuyendungs\Index.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2760,6 +2760,7 @@
     <Content Include="Views\Home1\get_tuyendung.cshtml" />
     <Content Include="Views\menu\get_uuendung.cshtml" />
     <Content Include="Views\detail\get_tuyendung.cshtml" />
+    <Content Include="Views\menu\get_tailieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

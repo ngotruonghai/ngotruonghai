@@ -22,7 +22,5 @@ namespace Nganhtinhoc.Models
         public Nullable<double> dieml3 { get; set; }
         public Nullable<double> dieml4 { get; set; }
         public string kq { get; set; }
-    
-        public virtual Sinhvien Sinhvien { get; set; }
     }
 }

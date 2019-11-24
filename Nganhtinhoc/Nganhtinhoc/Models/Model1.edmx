@@ -71,6 +71,7 @@
           <Property Name="text" Type="nvarchar(max)" />
           <Property Name="file" Type="nvarchar(max)" />
           <Property Name="magiaovien" Type="varchar" MaxLength="15" />
+          <Property Name="hide" Type="bit" />
         </EntityType>
         <EntityType Name="Tuyendung">
           <Key>
@@ -120,18 +121,6 @@
           <Property Name="ngay" Type="date" />
           <Property Name="hide" Type="bit" />
         </EntityType>
-        <Association Name="FK_Diemsinhvien_Sinhvien">
-          <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="0..1" />
-          <End Role="Diemsinhvien" Type="Self.Diemsinhvien" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sinhvien">
-              <PropertyRef Name="masinhvien" />
-            </Principal>
-            <Dependent Role="Diemsinhvien">
-              <PropertyRef Name="masinhvien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Giaovien_Nganh">
           <End Role="Nganh" Type="Self.Nganh" Multiplicity="0..1" />
           <End Role="Giaovien" Type="Self.Giaovien" Multiplicity="*" />
@@ -192,10 +181,6 @@
           <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Thongbao" EntityType="Self.Thongbao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Thongbaotruong" EntityType="Self.Thongbaotruong" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Diemsinhvien_Sinhvien" Association="Self.FK_Diemsinhvien_Sinhvien">
-            <End Role="Sinhvien" EntitySet="Sinhvien" />
-            <End Role="Diemsinhvien" EntitySet="Diemsinhvien" />
-          </AssociationSet>
           <AssociationSet Name="FK_Giaovien_Nganh" Association="Self.FK_Giaovien_Nganh">
             <End Role="Nganh" EntitySet="Nganh" />
             <End Role="Giaovien" EntitySet="Giaovien" />
@@ -230,7 +215,6 @@
           <Property Name="dieml3" Type="Double" />
           <Property Name="dieml4" Type="Double" />
           <Property Name="kq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Sinhvien" Relationship="Self.FK_Diemsinhvien_Sinhvien" FromRole="Diemsinhvien" ToRole="Sinhvien" />
         </EntityType>
         <EntityType Name="Giaovien">
           <Key>
@@ -263,7 +247,6 @@
           <Property Name="tensinhvien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Diemsinhvien" Relationship="Self.FK_Diemsinhvien_Sinhvien" FromRole="Sinhvien" ToRole="Diemsinhvien" />
           <NavigationProperty Name="Nganh" Relationship="Self.FK_Sinhvien_Nganh" FromRole="Sinhvien" ToRole="Nganh" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -292,6 +275,7 @@
           <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="file" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="magiaovien" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="hide" Type="Boolean" />
           <NavigationProperty Name="Giaovien" Relationship="Self.FK_Tailieu_Giaovien" FromRole="Tailieu" ToRole="Giaovien" />
         </EntityType>
         <EntityType Name="Tuyendung">
@@ -343,18 +327,6 @@
           <Property Name="ngay" Type="DateTime" Precision="0" />
           <Property Name="hide" Type="Boolean" />
         </EntityType>
-        <Association Name="FK_Diemsinhvien_Sinhvien">
-          <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="0..1" />
-          <End Role="Diemsinhvien" Type="Self.Diemsinhvien" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sinhvien">
-              <PropertyRef Name="masinhvien" />
-            </Principal>
-            <Dependent Role="Diemsinhvien">
-              <PropertyRef Name="masinhvien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Giaovien_Nganh">
           <End Role="Nganh" Type="Self.Nganh" Multiplicity="0..1" />
           <End Role="Giaovien" Type="Self.Giaovien" Multiplicity="*" />
@@ -415,10 +387,6 @@
           <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" />
           <EntitySet Name="Thongbao" EntityType="Self.Thongbao" />
           <EntitySet Name="Thongbaotruong" EntityType="Self.Thongbaotruong" />
-          <AssociationSet Name="FK_Diemsinhvien_Sinhvien" Association="Self.FK_Diemsinhvien_Sinhvien">
-            <End Role="Sinhvien" EntitySet="Sinhvien" />
-            <End Role="Diemsinhvien" EntitySet="Diemsinhvien" />
-          </AssociationSet>
           <AssociationSet Name="FK_Giaovien_Nganh" Association="Self.FK_Giaovien_Nganh">
             <End Role="Nganh" EntitySet="Nganh" />
             <End Role="Giaovien" EntitySet="Giaovien" />
@@ -513,6 +481,7 @@
                 <ScalarProperty Name="text" ColumnName="text" />
                 <ScalarProperty Name="file" ColumnName="file" />
                 <ScalarProperty Name="magiaovien" ColumnName="magiaovien" />
+                <ScalarProperty Name="hide" ColumnName="hide" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

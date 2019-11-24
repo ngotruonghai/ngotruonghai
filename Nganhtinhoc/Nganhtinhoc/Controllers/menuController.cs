@@ -56,5 +56,17 @@ namespace Nganhtinhoc.Controllers
             int pageNumber = (page ?? 1);
             return PartialView(v.ToPagedList(pageNumber, pageSize));
         }
+        public ActionResult get_tailieu(int? page)
+        {
+            if (page == null)
+                page = 1;
+            var v = (from f in db.Tailieu
+                     where f.hide == true
+                     orderby f.id descending
+                     select f);
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            return PartialView(v.ToPagedList(pageNumber, pageSize));
+        }
     }
 }

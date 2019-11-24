@@ -72,6 +72,7 @@
           <ScalarProperty Name="text" ColumnName="text" />
           <ScalarProperty Name="file" ColumnName="file" />
           <ScalarProperty Name="magiaovien" ColumnName="magiaovien" />
+          <ScalarProperty Name="hide" ColumnName="hide" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

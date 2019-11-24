@@ -13,12 +13,10 @@ namespace Nganhtinhoc.Areas.admin.Controllers
     public class DiemsinhviensController : baseeController
     {
         private NTHEntities db = new NTHEntities();
-        String h;
         // GET: admin/Diemsinhviens
         public ActionResult Index()
         {
-            var diemsinhvien = db.Diemsinhvien.Include(d => d.Sinhvien);
-            return View(diemsinhvien.ToList());
+            return View(db.Diemsinhvien.ToList());
         }
         public ActionResult get_masv()
         {

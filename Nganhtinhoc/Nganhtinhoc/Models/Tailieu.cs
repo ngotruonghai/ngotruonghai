@@ -19,6 +19,7 @@ namespace Nganhtinhoc.Models
         public string text { get; set; }
         public string file { get; set; }
         public string magiaovien { get; set; }
+        public Nullable<bool> hide { get; set; }
     
         public virtual Giaovien Giaovien { get; set; }
     }
