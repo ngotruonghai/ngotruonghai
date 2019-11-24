@@ -2718,6 +2718,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\upload\img\file\Assignment.docx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2761,6 +2762,7 @@
     <Content Include="Views\menu\get_uuendung.cshtml" />
     <Content Include="Views\detail\get_tuyendung.cshtml" />
     <Content Include="Views\menu\get_tailieu.cshtml" />
+    <Content Include="Views\menu\get_tengiaovien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

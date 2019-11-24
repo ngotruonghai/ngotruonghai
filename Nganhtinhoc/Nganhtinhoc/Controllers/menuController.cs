@@ -68,5 +68,12 @@ namespace Nganhtinhoc.Controllers
             int pageNumber = (page ?? 1);
             return PartialView(v.ToPagedList(pageNumber, pageSize));
         }
+        public ActionResult get_tengiaovien(string ma)
+        {
+            var v = from f in db.Giaovien
+                    where f.magiaovien == ma
+                    select f;
+            return PartialView(v.ToList());
+        }
     }
 }
