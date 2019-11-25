@@ -147,6 +147,7 @@
     <Compile Include="Controllers\detailController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginSVController.cs" />
     <Compile Include="Controllers\menuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2763,6 +2764,10 @@
     <Content Include="Views\detail\get_tuyendung.cshtml" />
     <Content Include="Views\menu\get_tailieu.cshtml" />
     <Content Include="Views\menu\get_tengiaovien.cshtml" />
+    <Content Include="Views\Shared\sinhvien_layout.cshtml" />
+    <Content Include="Views\LoginSV\get_sinhvien.cshtml" />
+    <Content Include="Views\Shared\loginSV_layout.cshtml" />
+    <Content Include="Views\LoginSV\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Sinhvien>
+
+@{
+    ViewBag.Title = "get_sinhvien";
+    Layout = "~/Views/Shared/sinhvien_layout.cshtml";
+}
+@foreach(var i in Model)
+{
+    @i.tensinhvien
+    @i.masinhvien
+}

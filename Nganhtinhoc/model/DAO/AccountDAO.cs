@@ -14,6 +14,18 @@ namespace model.DAO
         {
             db = new NTHdbContext();
         }
+        public bool logSV(string u,string p)
+        {
+            var result = db.Sinhviens.Count(x => x.masinhvien == u && x.pass == p);
+                if(result > 0)
+            {
+                return true;
+            }
+                else
+            {
+                return false;
+            }
+        }
        public bool log(String user,String pass)
         {
             var result = db.Taikhoans.Count(x => x.tk == user && x.pass == pass);
