@@ -24,6 +24,20 @@ namespace Nganhtinhoc.Controllers
                     select f;
             return View(v.ToList());
         }
+        public ActionResult get_thoikhoabieu(String ma)
+        {
+            var v = from f in db.Thoikhoabieu
+                    where f.manganh==ma
+                    select f;
+            return View(v.ToList());
+        }
+        public ActionResult get_tennganh(String ma)
+        {
+            var v = from f in db.Nganh
+                    where f.manganh == ma
+                    select f;
+            return PartialView(v.ToList());
+        }
         [HttpPost]
         public ActionResult Index(loginMD model)
         {

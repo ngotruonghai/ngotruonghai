@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Thoikhoabieu>
+
+@{
+    ViewBag.Title = "get_thoikhoabieu";
+    Layout = "~/Views/Shared/sinhvien_layout.cshtml";
+}
+@foreach(var i in Model)
+{
+    @Html.Action("get_tennganh", "LoginSV", new {ma=i.manganh })
+    break;
+} 

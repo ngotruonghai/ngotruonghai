@@ -2423,7 +2423,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ing_ero\bootstrap.min.css" />
+    <Content Include="Content\ing_ero\sinhvien\dangxuat.jfif" />
+    <Content Include="Content\ing_ero\sinhvien\HTSV.png" />
     <Content Include="Content\ing_ero\sinhvien\logotdt.png" />
+    <Content Include="Content\ing_ero\sinhvien\nha.png" />
     <Content Include="Content\ing_ero\sinhvien\sv_hoctap.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\template\newsfeed\assets\css\animate.css" />
@@ -2770,6 +2774,8 @@
     <Content Include="Views\LoginSV\get_sinhvien.cshtml" />
     <Content Include="Views\Shared\loginSV_layout.cshtml" />
     <Content Include="Views\LoginSV\Index.cshtml" />
+    <Content Include="Views\LoginSV\get_thoikhoabieu.cshtml" />
+    <Content Include="Views\LoginSV\get_tennganh.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
