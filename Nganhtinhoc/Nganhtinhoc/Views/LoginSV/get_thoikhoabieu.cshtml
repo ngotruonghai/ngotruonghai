@@ -4,8 +4,39 @@
     ViewBag.Title = "get_thoikhoabieu";
     Layout = "~/Views/Shared/sinhvien_layout.cshtml";
 }
-@foreach(var i in Model)
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+@foreach (var i in Model)
 {
-    @Html.Action("get_tennganh", "LoginSV", new {ma=i.manganh })
+    @Html.Action("get_tennganh", "LoginSV", new { ma = i.manganh })
     break;
-} 
+}
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-primary table-hover">
+            <thead>
+                <tr>
+                    <th>Môn học</th>
+                    <th>Phòng</th>
+                    <th>Giáo viên giảng dạy</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.monhoc</td>
+                        <td>@i.phong</td>
+                        <td>@i.giaoviengiangday</td>
+                        <td>@i.naybatdau</td>
+                        <td>@i.ngayketthuc</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

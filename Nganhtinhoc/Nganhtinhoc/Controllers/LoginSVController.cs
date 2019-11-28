@@ -13,8 +13,9 @@ namespace Nganhtinhoc.Controllers
         private NTHEntities db = new NTHEntities();
         // GET: LoginSV
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string ero)
         {
+            ViewBag.v = ero;
             return View();
         }
         public ActionResult get_sinhvien(String masv)
@@ -49,9 +50,9 @@ namespace Nganhtinhoc.Controllers
             }
             else
             {
-                ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng!");
+                //ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng!");
+                return RedirectToAction("Index", "LoginSV", new { ero = "Bạn đăng nhập sai mssv hoặc mật khẩu !" });
             }
-            return View(model);
         }
     }
 }

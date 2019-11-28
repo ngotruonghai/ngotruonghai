@@ -12,6 +12,14 @@ namespace Nganhtinhoc
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            /*login-đăng nhập*/
+            routes.MapRoute("Index", "{type}",
+        new { controller = "LoginSV", action = "Index" },
+        new RouteValueDictionary
+        {
+                { "type", "HTSV" }
+        },
+        namespaces: new[] { "Nganhtinhoc.Controllers" });
             /*login-thời khóa biểu*/
             routes.MapRoute("LoginSV", "{type}/{ma}",
          new { controller = "LoginSV", action = "get_thoikhoabieu",ma=UrlParameter.Optional },
