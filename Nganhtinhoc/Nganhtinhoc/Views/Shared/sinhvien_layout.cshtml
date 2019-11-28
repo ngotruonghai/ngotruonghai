@@ -3,11 +3,25 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Sinh viên</title>
 </head>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 <body>
-    <div>
-        @RenderBody()
-    </div>
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-lg-12 col-sm-12" style="margin-top:10px">
+               <div class="col-lg-2 col-sm-1"><img src="~/Content/ing_ero/sinhvien/logotdt.png" class="img-responsive" /></div>
+               <div class="col-lg-6 col-sm-4"><h1><strong style="color:#0061AD;font-size:150%">Hệ Thống Sinh Viên</strong></h1></div>
+               <div class="col-lg-2 col-sm-2">gh</div>
+               <div class="col-lg-2 col-sm-2">gh</div>
+           </div>
+           <div class="row">
+               <div class="col-lg-12 col-sm-12" style="background-color:#0061AD;height:10px;margin-top:15px"></div>
+           </div>
+           <div>
+               @RenderBody()
+           </div>
+       </div>
+       </div>
 </body>
 </html>

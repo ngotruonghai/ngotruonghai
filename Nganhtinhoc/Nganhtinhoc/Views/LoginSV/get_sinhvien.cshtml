@@ -4,6 +4,15 @@
     ViewBag.Title = "get_sinhvien";
     Layout = "~/Views/Shared/sinhvien_layout.cshtml";
 }
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+            <div class="col-lg-3 col-sm-3">
+                <a href="#"><img src="~/Content/ing_ero/sinhvien/sv_hoctap.jpg" class="img-thumbnail" style="background-color: #ccc;-webkit-box-shadow: 0 8px 6px -6px black; -moz-box-shadow: 0 8px 6px -6px black;box-shadow: 0 8px 6px -6px black;width:300px;height:300px" /></a>
+            </div>
+        </div>
+    </div>
+</div>
 @foreach(var i in Model)
 {
     @i.tensinhvien

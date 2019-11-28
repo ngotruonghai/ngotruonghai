@@ -2423,6 +2423,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ing_ero\sinhvien\logotdt.png" />
+    <Content Include="Content\ing_ero\sinhvien\sv_hoctap.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\template\newsfeed\assets\css\animate.css" />
     <Content Include="Content\template\newsfeed\assets\css\bootstrap.min.css" />
