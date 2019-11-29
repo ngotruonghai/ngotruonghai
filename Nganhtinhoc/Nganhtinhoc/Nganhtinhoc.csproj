@@ -2424,6 +2424,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\ing_ero\bootstrap.min.css" />
+    <Content Include="Content\ing_ero\sinhvien\cho.jfif" />
     <Content Include="Content\ing_ero\sinhvien\dangxuat.jfif" />
     <Content Include="Content\ing_ero\sinhvien\HTSV.png" />
     <Content Include="Content\ing_ero\sinhvien\logotdt.png" />
