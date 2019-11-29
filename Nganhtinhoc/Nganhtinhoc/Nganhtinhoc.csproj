@@ -2719,6 +2719,7 @@
     <Content Include="Areas\admin\Views\Tuyendungs\Details.cshtml" />
     <Content Include="Areas\admin\Views\Tuyendungs\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Tuyendungs\Index.cshtml" />
+    <Content Include="Content\upload\img\file\Assignment.docx" />
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -2726,7 +2727,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\upload\img\file\Assignment.docx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2777,6 +2777,7 @@
     <Content Include="Views\LoginSV\Index.cshtml" />
     <Content Include="Views\LoginSV\get_tennganh.cshtml" />
     <Content Include="Views\LoginSV\get_thoikhoabieu.cshtml" />
+    <Content Include="Views\LoginSV\get_diem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,7 +16,10 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         // GET: admin/Diemsinhviens
         public ActionResult Index()
         {
-            return View(db.Diemsinhvien.ToList());
+            var v = from f in db.Diemsinhvien
+                    orderby f.dieml1 descending
+                    select f;
+            return View(v.ToList());
         }
         public ActionResult get_masv()
         {

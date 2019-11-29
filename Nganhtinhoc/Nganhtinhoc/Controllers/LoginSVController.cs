@@ -39,6 +39,14 @@ namespace Nganhtinhoc.Controllers
                     select f;
             return PartialView(v.ToList());
         }
+        public ActionResult get_diem(String ma)
+        {
+            var v = from f in db.Diemsinhvien
+                    where f.masinhvien == ma
+                    orderby f.id descending
+                    select f;
+            return PartialView(v.ToList());
+        }
         [HttpPost]
         public ActionResult Index(loginMD model)
         {

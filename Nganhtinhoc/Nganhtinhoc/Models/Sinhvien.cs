@@ -14,12 +14,20 @@ namespace Nganhtinhoc.Models
     
     public partial class Sinhvien
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Sinhvien()
+        {
+            this.Diemsinhvien = new HashSet<Diemsinhvien>();
+        }
+    
         public string masinhvien { get; set; }
         public string manganh { get; set; }
         public string tensinhvien { get; set; }
         public string pass { get; set; }
         public string meta { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Diemsinhvien> Diemsinhvien { get; set; }
         public virtual Nganh Nganh { get; set; }
     }
 }

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Diemsinhvien>
+
+@{
+    ViewBag.Title = "get_diem";
+    Layout = "~/Views/Shared/sinhvien_layout.cshtml";
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="row">
+    <div class="col-lg-12">
+        @foreach(var i in Model)
+        {
+            <h1 style="text-align:center;color:#0061AD"><strong>Mssv:@i.masinhvien</strong></h1>
+            break;
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table table-primary table-hover">
+            <thead>
+                <tr>
+                    <th>Môn học</th>
+                    <th>Điểm HS 1 lần 1</th>
+                    <th>Điểm HS 1 lần 1</th>
+                    <th>Điểm HS 1 lần 2</th>
+                    <th>Điểm thi</th>
+                    <th>Kết quả</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.monhoc</td>
+                        <td>@i.dieml1</td>
+                        <td>@i.dieml2</td>
+                        <td>@i.dieml3</td>
+                        <td>@i.dieml4</td>
+                        <td>@i.kq</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

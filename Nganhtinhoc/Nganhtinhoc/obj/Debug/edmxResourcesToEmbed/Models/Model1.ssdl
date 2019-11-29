@@ -116,6 +116,18 @@
     <Property Name="ngay" Type="date" />
     <Property Name="hide" Type="bit" />
   </EntityType>
+  <Association Name="FK_Diemsinhvien_Sinhvien">
+    <End Role="Sinhvien" Type="Self.Sinhvien" Multiplicity="0..1" />
+    <End Role="Diemsinhvien" Type="Self.Diemsinhvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sinhvien">
+        <PropertyRef Name="masinhvien" />
+      </Principal>
+      <Dependent Role="Diemsinhvien">
+        <PropertyRef Name="masinhvien" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Giaovien_Nganh">
     <End Role="Nganh" Type="Self.Nganh" Multiplicity="0..1" />
     <End Role="Giaovien" Type="Self.Giaovien" Multiplicity="*" />
@@ -176,6 +188,10 @@
     <EntitySet Name="Thoikhoabieu" EntityType="Self.Thoikhoabieu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thongbao" EntityType="Self.Thongbao" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Thongbaotruong" EntityType="Self.Thongbaotruong" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Diemsinhvien_Sinhvien" Association="Self.FK_Diemsinhvien_Sinhvien">
+      <End Role="Sinhvien" EntitySet="Sinhvien" />
+      <End Role="Diemsinhvien" EntitySet="Diemsinhvien" />
+    </AssociationSet>
     <AssociationSet Name="FK_Giaovien_Nganh" Association="Self.FK_Giaovien_Nganh">
       <End Role="Nganh" EntitySet="Nganh" />
       <End Role="Giaovien" EntitySet="Giaovien" />
