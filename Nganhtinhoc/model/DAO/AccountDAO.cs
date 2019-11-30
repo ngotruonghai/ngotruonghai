@@ -14,6 +14,22 @@ namespace model.DAO
         {
             db = new NTHdbContext();
         }
+        public bool LoginGV(String u,String p)
+        {
+            var result = db.Giaoviens.Count(x => x.magiaovien == u && x.pass == p);
+            if(result>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public Giaovien GetID_GV(String username)
+        {
+            return db.Giaoviens.SingleOrDefault(x => x.magiaovien == username);
+        }
         public bool logSV(string u,string p)
         {
             var result = db.Sinhviens.Count(x => x.masinhvien == u && x.pass == p);

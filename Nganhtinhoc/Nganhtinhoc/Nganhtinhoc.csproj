@@ -144,9 +144,12 @@
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
     <Compile Include="Areas\admin\Controllers\Thongbao1sController.cs" />
     <Compile Include="Areas\admin\Controllers\TuyendungsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\detailController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Home_GVController.cs" />
+    <Compile Include="Controllers\loginGVController.cs" />
     <Compile Include="Controllers\LoginSVController.cs" />
     <Compile Include="Controllers\menuController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2779,12 +2782,16 @@
     <Content Include="Views\LoginSV\get_tennganh.cshtml" />
     <Content Include="Views\LoginSV\get_thoikhoabieu.cshtml" />
     <Content Include="Views\LoginSV\get_diem.cshtml" />
+    <Content Include="Views\Shared\layout_GV.cshtml" />
+    <Content Include="Views\Home_GV\Index.cshtml" />
+    <Content Include="Views\loginGV\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
     <Folder Include="Areas\admin\Views\basee\" />
     <Folder Include="Content\upload\img\thongbaotruong\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

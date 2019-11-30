@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Giaovien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/layout_GV.cshtml";
+}
+@foreach(var i in Model)
+{
+    @i.magiaovien
+}
