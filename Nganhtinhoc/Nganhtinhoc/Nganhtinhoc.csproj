@@ -2785,6 +2785,7 @@
     <Content Include="Views\Shared\layout_GV.cshtml" />
     <Content Include="Views\Home_GV\Index.cshtml" />
     <Content Include="Views\loginGV\Index.cshtml" />
+    <Content Include="Views\Home_GV\get_tailieu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

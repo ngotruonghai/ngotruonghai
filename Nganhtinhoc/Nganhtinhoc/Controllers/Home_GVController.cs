@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Nganhtinhoc.Models;
+using PagedList;
 
 namespace Nganhtinhoc.Controllers
 {
@@ -17,6 +18,18 @@ namespace Nganhtinhoc.Controllers
                     where f.magiaovien==ma
                     select f;
             return View(v.ToList());
+        }
+        public ActionResult get_tailieu(int ? page ,String ma)
+        {
+            if (page == null)
+                page = 1;
+            var v = (from f in db.Tailieu
+                     where f.magiaovien==ma && f.hide==true
+                     orderby f.id descending
+                     select f);
+            int pageSize = 1;
+            int pageNumber = (page ?? 1);
+            return PartialView(v.ToPagedList(pageNumber, pageSize));
         }
     }
 }

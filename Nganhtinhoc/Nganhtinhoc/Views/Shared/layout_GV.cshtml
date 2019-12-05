@@ -3,11 +3,26 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Giáo viên</title>
 </head>
+<link href="~/Content/ing_ero/bootstrap.min.css" rel="stylesheet" />
 <body>
-    <div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12" style="margin-top:10px">
+                <div class="col-lg-2 col-xs-2 col-md-2"><img src="~/Content/ing_ero/sinhvien/logotdt.png" class="img-responsive" /></div>
+                <div class="col-lg-4 col-xs-4 col-md-4"><p><h2 style="color:#0061AD"><strong>Hệ Thống GV</strong></h2></p></div>  
+                <div class="col-lg-2 col-xs-2 col-md-2"><a href="#"><img src="~/Content/ing_ero/sinhvien/nha.png" class="img-responsive" style="float:right;height:80px" /></a></div>
+                <div class="col-lg-2 col-xs-2 col-md-2"><a href="#"><img src="~/Content/ing_ero/sinhvien/dangxuat.jfif" class="img-responsive" style="float:left;height:80px" /></a></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12" style="background-color:#0061AD;height:10px;margin-top:15px"></div>
+        </div>
+    </div>
+    <div class="container">
         @RenderBody()
     </div>
+
 </body>
 </html>
