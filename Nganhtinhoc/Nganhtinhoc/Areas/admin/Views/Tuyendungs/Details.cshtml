@@ -4,56 +4,77 @@
     ViewBag.Title = "Details";
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
+<div class="container">
+    <div>
+        <h4>Tuyendung</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.Label("Tiêu đề")
+            </dt>
 
-<h2>Details</h2>
+            <dd>
+                <div class="card mb-4 py-3 border-bottom-danger">
+                    <div class="card-body">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">
+                                @Html.DisplayFor(model => model.tieude)s
+                            </font>
+                        </font>
+                    </div>
+                </div>
+            </dd>
 
-<div>
-    <h4>Tuyendung</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.img)
-        </dt>
+            <dt>
+                @Html.Label("meta")
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.img)
-        </dd>
+            <dd>
+                <div class="card mb-4 py-3 border-bottom-danger">
+                    <div class="card-body">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">
+                                @Html.DisplayFor(model => model.meta)
+                            </font>
+                        </font>
+                    </div>
+                </div>
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.tieude)
-        </dt>
+            <dt>
+                @Html.Label("Nội dung")
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.tieude)
-        </dd>
+            <dd>
+                <div class="card mb-4 py-3 border-bottom-danger">
+                    <div class="card-body">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">
+                                @Html.DisplayFor(model => model.vanban)
+                            </font>
+                        </font>
+                    </div>
+                </div>
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.vanban)
-        </dt>
+            <dt>
+                @Html.Label("Ảnh đại diện")
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.vanban)
-        </dd>
+            <dd>
+                <img src="~/Content/upload/img/tuyendung/@Model.img" width="300px" />
+            </dd>
+            <dt>
+                @Html.Label("Ẩn hoặc hiện")
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.meta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.meta)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.hide)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.hide)
-        </dd>
-
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.hide)
+            </dd>
+           
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id, @class = "btn btn-danger" }) 
     @Html.ActionLink("Back to List", "Index")
 </p>
