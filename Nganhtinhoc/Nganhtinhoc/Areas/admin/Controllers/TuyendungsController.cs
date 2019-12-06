@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Nganhtinhoc.Models;
+using Nganhtinhoc.Help;
+using System.IO;
+using Nganhtinhoc.Areas.admin.Controllers;
 
 namespace Nganhtinhoc.Areas.admin.Controllers
 {
@@ -46,10 +49,25 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,img,tieude,vanban,meta,hide")] Tuyendung tuyendung)
+        [ValidateInput(false)]
+        public ActionResult Create([Bind(Include = "id,img,tieude,vanban,meta,hide")] Tuyendung tuyendung, HttpPostedFileBase img)
         {
+            var path = "";
+            var filename = "";
             if (ModelState.IsValid)
             {
+                if (img != null)
+                {
+                    filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
+                    path = Path.Combine(Server.MapPath("~/Content/upload/img/tuyendung"), filename);
+                    img.SaveAs(path);
+                    tuyendung.img = filename; //Lưu ý 
+                }
+                else
+                {
+                    tuyendung.img = "tdt.png";
+                }
+                tuyendung.meta = Functions.ConvertToUnSign(tuyendung.meta);
                 db.Tuyendung.Add(tuyendung);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -78,7 +96,8 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,img,tieude,vanban,meta,hide")] Tuyendung tuyendung)
+        [ValidateInput(false)]
+        public ActionResult Edit([Bind(Include = "id,img,tieude,vanban,meta,hide")] Tuyendung tuyendung, HttpPostedFileBase img)
         {
             if (ModelState.IsValid)
             {
