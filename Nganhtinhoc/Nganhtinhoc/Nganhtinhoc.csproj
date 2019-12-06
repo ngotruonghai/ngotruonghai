@@ -2504,6 +2504,7 @@
     <Content Include="Content\upload\img\thongbao\Tin-hoc-18-6-9.jpg" />
     <Content Include="Content\upload\img\tuyendung\tb_2.jpg" />
     <Content Include="Content\upload\img\tuyendung\tb_4.png" />
+    <Content Include="Content\upload\img\tuyendung\tdt.png" />
     <Content Include="Content\upload\img\tuyendung\td_1.png" />
     <Content Include="Content\upload\img\tuyendung\td_3.png" />
     <Content Include="favicon.ico" />

@@ -10,10 +10,11 @@ using Nganhtinhoc.Models;
 using Nganhtinhoc.Help;
 using System.IO;
 using Nganhtinhoc.Areas.admin.Controllers;
+using System.Data.Entity.Validation;
 
 namespace Nganhtinhoc.Areas.admin.Controllers
 {
-    public class TuyendungsController : Controller
+    public class TuyendungsController : baseeController
     {
         private NTHEntities db = new NTHEntities();
 
@@ -99,15 +100,47 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "id,img,tieude,vanban,meta,hide")] Tuyendung tuyendung, HttpPostedFileBase img)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(tuyendung).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                var path = "";
+                var filename = "";
+                Tuyendung temp = getById(tuyendung.id);         
+                if (ModelState.IsValid)
+                {
+                    if (img != null)
+                    {
+                        //filename = Guid.NewGuid().ToString() + img.FileName;
+                        filename = DateTime.Now.ToString("dd-MM-yy-hh-mm-ss-") + img.FileName;
+                        path = Path.Combine(Server.MapPath("~/Content/upload/img/tuyendung"), filename);
+                        img.SaveAs(path);
+                        temp.img = filename; //Lưu ý
+                    }
+                    temp.tieude = tuyendung.tieude;
+                    //temp.description = news.description;
+                    //temp.detail = news.detail;
+                    temp.meta = Functions.ConvertToUnSign(tuyendung.meta); //convert Tiếng Việt không dấu
+                    temp.hide = tuyendung.hide;
+                    //temp.order = news.order;
+                    db.Entry(temp).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DbEntityValidationException e)
+            {
+                throw e;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             return View(tuyendung);
         }
+        public Tuyendung getById(long id)
+        {
+            return db.Tuyendung.Where(x => x.id == id).FirstOrDefault();
 
+        }
         // GET: admin/Tuyendungs/Delete/5
         public ActionResult Delete(int? id)
         {
