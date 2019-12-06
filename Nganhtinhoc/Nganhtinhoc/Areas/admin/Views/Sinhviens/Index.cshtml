@@ -4,49 +4,50 @@
     ViewBag.Title = "Index";
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
-
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Create", "Sinhviens")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.tensinhvien)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pass)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.meta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nganh.tennganh)
-        </th>
-        <th></th>
-    </tr>
+<div class="card-body">
+    <div class="table-responsive">
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="col-sm-12">
+                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th>Mã SV</th>
+                            <th>Tên SV</th>
+                            <th>PassWordk</th>
+                            <th>Ngành</th>
+                            <th style="width:80px">Chức năng</th>
+                        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.tensinhvien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pass)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.meta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nganh.tennganh)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.masinhvien }) |
-            @Html.ActionLink("Details", "Details", new { id=item.masinhvien }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.masinhvien })
-        </td>
-    </tr>
-}
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model)
+                        {
+                            <tr role="row" class="odd">
+                                <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.masinhvien</font></font></td>
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><img src="~/Content/upload/img/thongbao/@i.img" width="100px" /></font></font></td>*@
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.tensinhvien</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.pass</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.Nganh.tennganh</font></font></td>
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@(i.hide.GetValueOrDefault(false) ? "Hiển thị" : "Ẩn")</font></font></td>*@
+                                <td>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            @Html.ActionLink(" ", "Edit", new { id = i.masinhvien }, new { @class = "fas fa-pen", @Style = "color:	#00BFFF;" })@*&ensp;&ensp;*@
+                                            @Html.ActionLink(" ", "Details", new { id = i.masinhvien }, new { @class = "fas fa-eye", @Style = "color:#0033CC	;" })@*&ensp;&ensp;*@
+                                            @Html.ActionLink(" ", "Delete", new { id = i.masinhvien }, new { @class = "fas fa-trash", @Style = "color:#980000 	;" })
+                                        </font>
+                                    </font>
+                                </td>
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 34.000</font></font></td>*@
+                            </tr>
+                        }
 
-</table>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
