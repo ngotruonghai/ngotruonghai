@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -93,7 +94,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
             ViewBag.manganh = new SelectList(db.Nganh, "manganh", "tennganh", sinhvien.manganh);
             return View(sinhvien);
         }
-
+        ArrayList A = new ArrayList();
         // GET: admin/Sinhviens/Delete/5
         public ActionResult Delete(string id)
         {
@@ -114,6 +115,9 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
+            var v = db.Diemsinhvien.Where(x => x.masinhvien == id).ToList();
+            db.Diemsinhvien.RemoveRange(v);
+            db.SaveChanges();
             Sinhvien sinhvien = db.Sinhvien.Find(id);
             db.Sinhvien.Remove(sinhvien);
             db.SaveChanges();
