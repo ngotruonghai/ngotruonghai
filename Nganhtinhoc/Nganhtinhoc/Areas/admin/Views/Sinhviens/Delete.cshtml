@@ -4,9 +4,12 @@
     ViewBag.Title = "Delete";
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <h2>Delete</h2>
-@ViewBag.f
 <div>
     <h4>Sinhvien</h4>
     <hr />
@@ -44,13 +47,45 @@
         </dd>
 
     </dl>
+    <div class="container mt-3">
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Xóa
+        </button>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thông Báo</h4>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Bạn có muốn xóa sinh viên này cùng với bảng điểm ?
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-actions no-color">
+                                <input type="submit" value="Có" class="btn btn-danger" /> 
+                            </div>
+                        }
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Không</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
-    }
+
+    </div>
+    @Html.ActionLink("Back to List", "Index")
 </div>

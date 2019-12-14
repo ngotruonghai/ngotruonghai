@@ -11,7 +11,7 @@ using Nganhtinhoc.Models;
 
 namespace Nganhtinhoc.Areas.admin.Controllers
 {
-    public class SinhviensController : Controller
+    public class SinhviensController : baseeController
     {
         private NTHEntities db = new NTHEntities();
 
@@ -94,7 +94,6 @@ namespace Nganhtinhoc.Areas.admin.Controllers
             ViewBag.manganh = new SelectList(db.Nganh, "manganh", "tennganh", sinhvien.manganh);
             return View(sinhvien);
         }
-        ArrayList A = new ArrayList();
         // GET: admin/Sinhviens/Delete/5
         public ActionResult Delete(string id)
         {
