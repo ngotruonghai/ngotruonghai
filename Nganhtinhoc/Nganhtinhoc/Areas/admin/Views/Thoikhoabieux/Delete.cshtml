@@ -1,0 +1,81 @@
+﻿@model Nganhtinhoc.Models.Thoikhoabieu
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Thoikhoabieu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.monhoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monhoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.naybatdau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.naybatdau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngayketthuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngayketthuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.giaoviengiangday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giaoviengiangday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nganh.tennganh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nganh.tennganh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

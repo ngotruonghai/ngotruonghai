@@ -1,0 +1,75 @@
+﻿@model Nganhtinhoc.Models.Thoikhoabieu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Thoikhoabieu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.monhoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monhoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.naybatdau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.naybatdau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngayketthuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngayketthuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.giaoviengiangday)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giaoviengiangday)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nganh.tennganh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nganh.tennganh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
