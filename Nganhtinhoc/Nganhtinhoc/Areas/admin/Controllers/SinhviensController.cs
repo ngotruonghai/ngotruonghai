@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Nganhtinhoc.Models;
+using Nganhtinhoc.Help;
 
 namespace Nganhtinhoc.Areas.admin.Controllers
 {
@@ -53,6 +54,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                sinhvien.meta = Functions.ConvertToUnSign(sinhvien.meta);
                 db.Sinhvien.Add(sinhvien);
                 db.SaveChanges();
                 return RedirectToAction("Index");
