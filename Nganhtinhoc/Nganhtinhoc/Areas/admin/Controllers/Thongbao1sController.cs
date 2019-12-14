@@ -118,11 +118,13 @@ namespace Nganhtinhoc.Areas.admin.Models
                         temp.img = filename; //Lưu ý
                     }
                     // temp.datebegin = Convert.ToDateTime(DateTime.Now.ToShortDateString());                   
-                    temp.tieude = thongbao.tieude;
                     //temp.description = news.description;
                     //temp.detail = news.detail;
                     temp.meta = Functions.ConvertToUnSign(thongbao.meta); //convert Tiếng Việt không dấu
+                    temp.tieude = thongbao.tieude;
+                    temp.gioithieu = thongbao.gioithieu;
                     temp.hide = thongbao.hide;
+                    temp.vanban = thongbao.vanban;
                     //temp.order = news.order;
                     db.Entry(temp).State = EntityState.Modified;
                     db.SaveChanges();
