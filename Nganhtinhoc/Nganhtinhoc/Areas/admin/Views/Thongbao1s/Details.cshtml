@@ -6,100 +6,92 @@
 }
 
 <h2>Details</h2>
-<div class="container">
-    <h4>Thongbao</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.Label("Tiêu đề")
-        </dt>
+<div class="container-fluid">
 
-        <dd>
-            <div class="card mb-4 py-3 border-bottom-danger">
-                <div class="card-body">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            @Html.DisplayFor(model => model.tieude)
-                        </font>
-                    </font>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Cards</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+
+            <!-- Dropdown Card Example -->
+            <!-- Card Header - Dropdown -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Tài khoản hệ thống SV</h6>
                 </div>
-            </div>          
-        </dd>
-
-        <dt>
-            @Html.Label("Văn bản")
-        </dt>
-
-        <dd>
-            <div class="card mb-4 py-3 border-bottom-danger">
-                <div class="card-body">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            @Html.Raw(Model.vanban)
-
-                        </font>
-                    </font>
-                </div>
-            </div> 
-        </dd>
-
-        <dt>
-            @Html.Label("Ảnh đại diện")
-        </dt>
-
-        <dd>
-           <img src="~/Content/upload/img/thongbao/@Model.img" width="300px"/>
-        </dd>
-
-        <dt>
-            @Html.Label("Meta")
-        </dt>
-
-        <dd>
-            <div class="card mb-4 py-3 border-bottom-danger">
-                <div class="card-body">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            @Html.DisplayFor(model => model.meta)
-                        </font>
-                    </font>
-                </div>
-            </div>     
-        </dd>
-
-        <dt>
-            @Html.Label("Giới thiệu")
-        </dt>
-
-        <dd>
-            <div class="card mb-4 py-3 border-bottom-danger">
-                <div class="card-body">
-                    <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
-                            @Html.DisplayFor(model => model.gioithieu)
-                        </font>
-                    </font>
+                <div class="card-body" style="text-align:center">
+                    <p><strong>Tài khoản:</strong> @Model.masinhvien</p>
+                    <p><strong>Mật khẩu:</strong> @Model.pass</p>
                 </div>
             </div>
-        </dd>
+            <!-- Card Body -->
+        </div>
+        <div class="col-lg-8">
 
-        <dt>
-            @Html.Label("Ngày đăng")
-        </dt>
+            <!-- Dropdown Card Example -->
+            <!-- Card Header - Dropdown -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Thông Tin Sinh Viên</h6>
+                </div>
+                <div class="card-body">
+                    <p><strong>Tên Sinh Viên:</strong>  @Model.tensinhvien &ensp; <strong>Mã Sinh Viên:</strong> @Model.masinhvien</p>
+                    <p><strong>Ngành Học:</strong>  @Model.Nganh.tennganh &ensp; <strong>Khóa hoc: </strong> @Model.Nganh.khoahoc</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.ngay)
-        </dd>
+                </div>
+            </div>
+            <!-- Card Body -->
 
-        <dt>
-            @Html.Label("Ẩn hoặc hiện")
-        </dt>
+        </div>
+    </div>
+    @Html.Action("gat_diemsv", "Sinhviens", new { ma = Model.masinhvien })
+    <div class="row">
+        <div class="col-lg-2 col-sm-2 col-md-2"><p>@Html.ActionLink("Quay lại", "Index", "Sinhviens", new { @class = "btn btn-primary" })</p></div>
+        <div class="col-lg-2 col-sm-2 col-md-2">
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Xóa
+            </button>
 
-        <dd>
-            @Html.DisplayFor(model => model.hide)
-        </dd>
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
 
-    </dl>
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thông Báo</h4>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Bạn có muốn xóa sinh viên này cùng với bảng điểm không ?
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Có" class="btn btn-danger" />
+                                </div>
+                                <div class="form-actions no-color">
+                                </div>
+                            }
+                            <button style="width=100px" type="button" class="btn btn-danger" data-dismiss="modal">Không</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
