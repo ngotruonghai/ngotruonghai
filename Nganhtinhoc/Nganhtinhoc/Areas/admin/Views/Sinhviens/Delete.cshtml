@@ -9,83 +9,90 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<h2>Delete</h2>
-<div>
-    <h4>Sinhvien</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.tensinhvien)
-        </dt>
+<div class="container-fluid">
 
-        <dd>
-            @Html.DisplayFor(model => model.tensinhvien)
-        </dd>
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Cards</h1>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.pass)
-        </dt>
+    <div class="row">
+        <div class="col-lg-4">
 
-        <dd>
-            @Html.DisplayFor(model => model.pass)
-        </dd>
+            <!-- Dropdown Card Example -->
+            <!-- Card Header - Dropdown -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Tài khoản hệ thống SV</h6>
+                </div>
+                <div class="card-body" style="text-align:center">
+                    <p><strong>Tài khoản:</strong> @Model.masinhvien</p>
+                    <p><strong>Mật khẩu:</strong> @Model.pass</p>
+                </div>
+            </div>
+            <!-- Card Body -->
+        </div>
+        <div class="col-lg-8">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.meta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.meta)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nganh.tennganh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nganh.tennganh)
-        </dd>
-
-    </dl>
-    <div class="container mt-3">
-        <!-- Button to Open the Modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-            Xóa
-        </button>
-
-        <!-- The Modal -->
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Thông Báo</h4>
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        Bạn có muốn xóa sinh viên này cùng với bảng điểm ?
-                    </div>
-
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        @using (Html.BeginForm())
-                        {
-                            @Html.AntiForgeryToken()
-
-                            <div class="form-actions no-color">
-                                <input type="submit" value="Có" class="btn btn-danger" /> 
-                            </div>
-                        }
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Không</button>
-                    </div>
+            <!-- Dropdown Card Example -->
+            <!-- Card Header - Dropdown -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Thông Tin Sinh Viên</h6>
+                </div>
+                <div class="card-body">
+                    <p><strong>Tên Sinh Viên:</strong>  @Model.tensinhvien &ensp; <strong>Mã Sinh Viên:</strong> @Model.masinhvien</p>
+                    <p><strong>Ngành Học:</strong>  @Model.Nganh.tennganh &ensp; <strong>Khóa hoc: </strong> @Model.Nganh.khoahoc</p>
 
                 </div>
             </div>
-        </div>
+            <!-- Card Body -->
 
+        </div>
     </div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    @Html.Action("gat_diemsv", "Sinhviens", new { ma = Model.masinhvien })
+<div class="row">
+    <div class="col-lg-2 col-sm-2 col-md-2"><p>@Html.ActionLink("Quay lại", "Index", "Sinhviens", new { @class = "btn btn-primary" })</p></div>
+    <div class="col-lg-2 col-sm-2 col-md-2">
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >
+                Xóa
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thông Báo</h4>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Bạn có muốn xóa sinh viên này cùng với bảng điểm ?
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Có" class="btn btn-danger" />
+                                </div>
+                                <div class="form-actions no-color">
+                                </div>
+                            }
+                            <button style="width=100px" type="button" class="btn btn-danger" data-dismiss="modal">Không</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Diemsinhvien>
+<div class="card-body">
+    <div class="table-responsive">
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="col-sm-12">
+                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th>Môn Học</th>
+                            <th>Điểm HS1 L1</th>
+                            <th>Điểm HS2 L1</th>
+                            <th>Điểm HS2 L2</th>
+                            <th>Điểm thi</th>
+                            <th>Kết quả</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model)
+                        {
+                            <tr role="row" class="odd">
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.monhoc</font></font></td>
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><img src="~/Content/upload/img/thongbao/@i.img" width="100px" /></font></font></td>*@
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml1</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml2</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml3</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.dieml4</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.kq</font></font></td>
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@(i.hide.GetValueOrDefault(false) ? "Hiển thị" : "Ẩn")</font></font></td>*@
+                                @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 34.000</font></font></td>*@
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

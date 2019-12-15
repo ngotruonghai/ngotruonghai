@@ -15,7 +15,14 @@ namespace Nganhtinhoc.Areas.admin.Controllers
     public class SinhviensController : baseeController
     {
         private NTHEntities db = new NTHEntities();
-
+        public ActionResult gat_diemsv(String ma)
+        {
+            var v = from f in db.Diemsinhvien
+                    where f.masinhvien == ma
+                    orderby f.id descending
+                    select f;
+            return View(v.ToList());
+        }
         // GET: admin/Sinhviens
         public ActionResult Index()
         {
@@ -104,6 +111,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Sinhvien sinhvien = db.Sinhvien.Find(id);
+            //var sv = db.Sinhvien.Include(x => x.Diemsinhvien).ToList();
             if (sinhvien == null)
             {
                 return HttpNotFound();
