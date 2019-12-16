@@ -23,6 +23,13 @@ namespace Nganhtinhoc.Areas.admin.Controllers
                     select f;
             return View(v.ToList());
         }
+        public ActionResult get_detaildiem(String id)
+        {
+            var v = (from f in db.Sinhvien
+                     where f.masinhvien == id
+                     select f).Include(x => x.Nganh);
+            return View(v.ToList());
+        }
         // GET: admin/Sinhviens
         public ActionResult Index()
         {

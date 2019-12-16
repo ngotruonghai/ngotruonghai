@@ -14,11 +14,12 @@ namespace Nganhtinhoc.Areas.admin.Controllers
     {
         private NTHEntities db = new NTHEntities();
         // GET: admin/Diemsinhviens
-        public ActionResult Index()
+        public ActionResult Index(String id)
         {
-            var v = from f in db.Diemsinhvien
+            var v = (from f in db.Diemsinhvien
+                    where f.masinhvien==id
                     orderby f.dieml1 descending
-                    select f;
+                    select f).Include(x=>x.Sinhvien);
             return View(v.ToList());
         }
         public ActionResult get_masv()
@@ -75,7 +76,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
                 diemsinhvien.masinhvien =m;
                 db.Diemsinhvien.Add(diemsinhvien);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("get_detaildiem", "Sinhviens",new {id=m });
             }
 
             ViewBag.masinhvien = new SelectList(db.Sinhvien, "masinhvien", "manganh", diemsinhvien.masinhvien);
