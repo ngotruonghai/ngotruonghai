@@ -5,14 +5,15 @@
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
 <h2>Details</h2>
 
 <div class="container-fluid">
 
     <!-- Page Heading -->
     @*<div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Cards</h1>
-    </div>*@
+            <h1 class="h3 mb-0 text-gray-800">Cards</h1>
+        </div>*@
 
     <div class="row">
         <div class="col-lg-4">
@@ -39,8 +40,12 @@
                     <h6 class="m-0 font-weight-bold text-primary" style="text-align:center">Thông Tin Sinh Viên</h6>
                 </div>
                 <div class="card-body">
-                    <p><strong>Tên Sinh Viên:</strong>  @Model.tensinhvien &ensp; <strong>Mã Sinh Viên:</strong> @Model.masinhvien</p>
-                    <p><strong>Ngành Học:</strong>  @Model.Nganh.tennganh &ensp; <strong>Khóa hoc: </strong> @Model.Nganh.khoahoc</p>
+                    <div class="row">
+                        <div class="col-lg-6"><strong>Tên Sinh Viên:</strong>  @Model.tensinhvien</div>
+                        <div class="col-lg-6"><strong>Mã Sinh Viên:</strong> @Model.masinhvien</div>
+                        <div class="col-lg-6"><strong>Ngành Học:</strong>  @Model.Nganh.tennganh</div>
+                        <div class="col-lg-6"><strong>Khóa hoc: </strong> @Model.Nganh.khoahoc</div>
+                    </div>
 
                 </div>
             </div>
@@ -51,6 +56,6 @@
     @Html.Action("gat_diemsv", "Sinhviens", new { ma = Model.masinhvien })
     <p>
         @Html.ActionLink("Quay lại", "Index", "Sinhviens", new { @class = "btn btn-primary" })
-        @Html.ActionLink("Edit", "Edit", "Sinhviens", new { id = Model.masinhvien }, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Sữa", "Edit", "Sinhviens", new { id = Model.masinhvien }, new { @class = "btn btn-primary" })
     </p>
 </div>

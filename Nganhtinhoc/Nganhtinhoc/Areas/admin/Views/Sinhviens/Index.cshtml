@@ -14,11 +14,11 @@
                 <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                     <thead>
                         <tr role="row">
-                            <th>Mã SV</th>
-                            <th>Tên SV</th>
-                            <th>PassWordk</th>
-                            <th>Ngành</th>
-                            <th style="width:80px">Chức năng</th>
+                            <th style="width:50px">Mã SV</th>
+                            <th style="width:150px">Tên SV</th>
+                            <th style="width:50px">PassWordk</th>
+                            <th style="width:120px">Ngành</th>
+                            <th style="width:100px">Chức năng</th>
                         </tr>
 
                     </thead>
@@ -38,6 +38,7 @@
                                             @Html.ActionLink(" ", "Edit", new { id = i.masinhvien }, new { @class = "fas fa-pen", @Style = "color:	#00BFFF;" })@*&ensp;&ensp;*@
                                             @Html.ActionLink(" ", "Details", new { id = i.masinhvien }, new { @class = "fas fa-eye", @Style = "color:#0033CC	;" })@*&ensp;&ensp;*@
                                             @Html.ActionLink(" ", "Delete", new { id = i.masinhvien }, new { @class = "fas fa-trash", @Style = "color:#980000 	;" })
+                                            @Html.ActionLink("Điểm", "Create", "Diemsinhviens", new { msv = i.masinhvien, ten = i.tensinhvien }, new { @class = "btn btn-primary" })
                                         </font>
                                     </font>
                                 </td>
