@@ -44,7 +44,8 @@
             <!-- Card Body -->
 
         </div>
-        @Html.Action("Index", "Diemsinhviens",new {id=i.masinhvien,sv=i.tensinhvien })
+        @Html.Action("Index", "Diemsinhviens", new { id = i.masinhvien, sv = i.tensinhvien })
         break;
     }
+    @Html.ActionLink("Quay lại", "Index", "Sinhviens", new { @class = "btn btn-primary" })
 </div>

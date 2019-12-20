@@ -17,7 +17,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         public ActionResult Index(String id,string sv)
         {
             ViewBag.id = id;
-            ViewBag.sv = sv.ToString();
+            ViewBag.sv = sv;
             var v = (from f in db.Diemsinhvien
                     where f.masinhvien==id
                     orderby f.dieml1 descending
