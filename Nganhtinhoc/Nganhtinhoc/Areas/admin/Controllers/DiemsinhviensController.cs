@@ -86,7 +86,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         }
 
         // GET: admin/Diemsinhviens/Edit/5
-        public ActionResult Edit(int? id,string ma)
+        public ActionResult Edit(int? id,string ma, int s1, int s21, int s22, int t)
         {
             if (id == null)
             {
@@ -98,6 +98,10 @@ namespace Nganhtinhoc.Areas.admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.id = ma;
+            ViewBag.d1 = s1;
+            ViewBag.d21 = s21;
+            ViewBag.d22 = s22;
+            ViewBag.dt = t;
             ViewBag.masinhvien = new SelectList(db.Sinhvien, "masinhvien", "manganh", diemsinhvien.masinhvien);
             return View(diemsinhvien);
         }
@@ -107,6 +111,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "id,masinhvien,monhoc,dieml1,dieml2,dieml3,dieml4,kq")] Diemsinhvien diemsinhvien)
         {
             if (ModelState.IsValid)
