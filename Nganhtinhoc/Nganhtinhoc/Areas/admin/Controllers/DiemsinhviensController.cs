@@ -14,8 +14,10 @@ namespace Nganhtinhoc.Areas.admin.Controllers
     {
         private NTHEntities db = new NTHEntities();
         // GET: admin/Diemsinhviens
-        public ActionResult Index(String id)
+        public ActionResult Index(String id,string sv)
         {
+            ViewBag.id = id;
+            ViewBag.sv = sv.ToString();
             var v = (from f in db.Diemsinhvien
                     where f.masinhvien==id
                     orderby f.dieml1 descending
@@ -45,7 +47,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         // GET: admin/Diemsinhviens/Create
         public ActionResult Create(String msv,string ten)
         {
-            ViewBag.masinhvien = msv;
+            ViewBag.id = msv;
             ViewBag.ten = ten;
             return View();
         }

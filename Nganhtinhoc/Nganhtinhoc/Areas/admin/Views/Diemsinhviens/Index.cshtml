@@ -1,11 +1,7 @@
 ﻿@model IEnumerable<Nganhtinhoc.Models.Diemsinhvien>
 <div class="card-body">
     <div class="col-lg-12">
-        @foreach (var i in Model)
-        {
-            <p style="float:right"> @Html.ActionLink("Thêm", "Create", "Diemsinhviens", new { msv =i.Sinhvien.masinhvien , ten = i.Sinhvien.tensinhvien }, new { @class = "btn btn-info btn-sm" })</p>
-            break;
-        }
+            <p style="float:right"> @Html.ActionLink("Thêm", "Create", "Diemsinhviens", new { msv =ViewBag.id , ten = ViewBag.sv }, new { @class = "btn btn-info btn-sm" })</p>
     </div>
     <div class="table-responsive">
         <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">

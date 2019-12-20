@@ -14,15 +14,14 @@
 <div class="container">
     <div class="form-horizontal">
         <h4>Diemsinhvien</h4>
-        <strong>@ViewBag.ten</strong>
-        <strong>@ViewBag.masinhvien</strong>
-        <strong>@ViewBag.m</strong>
+        <p> <strong>@ViewBag.id</strong></p>
+        <p> <strong>@ViewBag.ten</strong></p>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.masinhvien, "masinhvien", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input name="m" value="@ViewBag.masinhvien" />
+                <input name="m" value="@ViewBag.id" />
                 @Html.ValidationMessageFor(model => model.masinhvien, "", new { @class = "text-danger" })
             </div>
         </div>
