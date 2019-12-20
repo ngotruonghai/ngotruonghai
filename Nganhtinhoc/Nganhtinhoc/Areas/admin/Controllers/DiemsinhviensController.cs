@@ -86,7 +86,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
         }
 
         // GET: admin/Diemsinhviens/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id,string ma)
         {
             if (id == null)
             {
@@ -97,6 +97,7 @@ namespace Nganhtinhoc.Areas.admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.id = ma;
             ViewBag.masinhvien = new SelectList(db.Sinhvien, "masinhvien", "manganh", diemsinhvien.masinhvien);
             return View(diemsinhvien);
         }
