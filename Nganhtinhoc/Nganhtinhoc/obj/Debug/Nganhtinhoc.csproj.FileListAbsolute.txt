@@ -29,7 +29,6 @@ C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\Newtonsoft.Json.xml
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\Antlr3.Runtime.pdb
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.csprojAssemblyReference.cache
-C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.csproj.CoreCompileInputs.cache
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.csproj.CopyComplete
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.dll
 C:\Users\pc\Desktop\ngotruonghai\Nganhtinhoc\Nganhtinhoc\obj\Debug\Nganhtinhoc.pdb

@@ -142,6 +142,7 @@
     <Compile Include="Areas\admin\Controllers\DiemsinhviensController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\login1Controller.cs" />
+    <Compile Include="Areas\admin\Controllers\NganhsController.cs" />
     <Compile Include="Areas\admin\Controllers\SinhviensController.cs" />
     <Compile Include="Areas\admin\Controllers\ThoikhoabieuxController.cs" />
     <Compile Include="Areas\admin\Controllers\Thongbao1sController.cs" />
@@ -2746,6 +2747,11 @@
     <Content Include="Areas\admin\Views\Thoikhoabieux\Index.cshtml" />
     <Content Include="Areas\admin\Views\Sinhviens\gat_diemsv.cshtml" />
     <Content Include="Areas\admin\Views\Sinhviens\get_detaildiem.cshtml" />
+    <Content Include="Areas\admin\Views\Nganhs\Create.cshtml" />
+    <Content Include="Areas\admin\Views\Nganhs\Delete.cshtml" />
+    <Content Include="Areas\admin\Views\Nganhs\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Nganhs\Edit.cshtml" />
+    <Content Include="Areas\admin\Views\Nganhs\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

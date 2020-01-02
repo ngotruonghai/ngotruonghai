@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Nganhtinhoc.Models.Nganh>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.tennganh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.khoahoc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tennganh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.khoahoc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.manganh }) |
+            @Html.ActionLink("Details", "Details", new { id=item.manganh }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.manganh })
+        </td>
+    </tr>
+}
+
+</table>
