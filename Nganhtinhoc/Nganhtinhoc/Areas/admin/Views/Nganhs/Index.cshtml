@@ -5,36 +5,49 @@
     Layout = "~/Areas/admin/Views/Shared/admin_layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Ngành</h2>
+<div class="card-body">
+    <div class="table-responsive">
+        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="col-sm-12">
+                <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Tên: kích hoạt để sắp xếp cột giảm dần" style="width: 163px;">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Mã ngành</font>
+                                </font>
+                            </th>
+                            <th>Tên ngành</th>
+                            <th>Khóa học</th>
+                            <th style="width:80px">Chức năng</th>
+                        </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.tennganh)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.khoahoc)
-        </th>
-        <th></th>
-    </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model)
+                        {
+                        <tr role="row" class="odd">
+                            <td class="sorting_1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.manganh</font></font></td>
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.tennganh</font></font></td>
+                            <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@i.khoahoc</font></font></td>
+                            <td>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">
+                                        @Html.ActionLink(" ", "Edit", new { id = i.manganh }, new { @class = "fas fa-pen", @Style = "color:	#00BFFF;" })@*&ensp;&ensp;*@
+                                        @Html.ActionLink(" ", "Details", new { id = i.manganh }, new { @class = "fas fa-eye", @Style = "color:#0033CC	;" })@*&ensp;&ensp;*@
+                                        @Html.ActionLink(" ", "Delete", new { id = i.manganh }, new { @class = "fas fa-trash", @Style = "color:#980000 	;" })
+                                    </font>
+                                </font>
+                            </td>
+                            @*<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 34.000</font></font></td>*@
+                        </tr>
+                        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.tennganh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.khoahoc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.manganh }) |
-            @Html.ActionLink("Details", "Details", new { id=item.manganh }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.manganh })
-        </td>
-    </tr>
-}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
-</table>
