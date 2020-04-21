@@ -29,7 +29,6 @@ namespace Nganhtinhoc.Models
         public virtual DbSet<Giaovien> Giaovien { get; set; }
         public virtual DbSet<Nganh> Nganh { get; set; }
         public virtual DbSet<Sinhvien> Sinhvien { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Taikhoan> Taikhoan { get; set; }
         public virtual DbSet<Tailieu> Tailieu { get; set; }
         public virtual DbSet<Tuyendung> Tuyendung { get; set; }

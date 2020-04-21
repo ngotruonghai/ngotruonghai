@@ -12,7 +12,7 @@ namespace model.Emtity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sinhvien()
         {
-            Diemsinhviens = new HashSet<Diemsinhvien>();
+            Diemsinhvien = new HashSet<Diemsinhvien>();
         }
 
         [Key]
@@ -31,7 +31,7 @@ namespace model.Emtity
         public string meta { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Diemsinhvien> Diemsinhviens { get; set; }
+        public virtual ICollection<Diemsinhvien> Diemsinhvien { get; set; }
 
         public virtual Nganh Nganh { get; set; }
     }

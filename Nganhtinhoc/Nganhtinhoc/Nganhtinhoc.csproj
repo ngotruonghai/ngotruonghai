@@ -188,9 +188,6 @@
     <Compile Include="Models\Sinhvien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Taikhoan.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2728,13 +2725,6 @@
     <Content Include="Areas\admin\Views\Tuyendungs\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Tuyendungs\Index.cshtml" />
     <Content Include="Content\upload\img\file\Assignment.docx" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\admin\Views\Sinhviens\Create.cshtml" />
     <Content Include="Areas\admin\Views\Sinhviens\Delete.cshtml" />
     <Content Include="Areas\admin\Views\Sinhviens\Details.cshtml" />
@@ -2752,6 +2742,13 @@
     <Content Include="Areas\admin\Views\Nganhs\Details.cshtml" />
     <Content Include="Areas\admin\Views\Nganhs\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Nganhs\Index.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

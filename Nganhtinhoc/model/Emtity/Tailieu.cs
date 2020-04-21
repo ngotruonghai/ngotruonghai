@@ -21,6 +21,8 @@ namespace model.Emtity
         [StringLength(15)]
         public string magiaovien { get; set; }
 
+        public bool? hide { get; set; }
+
         public virtual Giaovien Giaovien { get; set; }
     }
 }

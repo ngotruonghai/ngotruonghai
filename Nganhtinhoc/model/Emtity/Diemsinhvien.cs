@@ -9,7 +9,6 @@ namespace model.Emtity
     [Table("Diemsinhvien")]
     public partial class Diemsinhvien
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [StringLength(12)]
@@ -18,13 +17,13 @@ namespace model.Emtity
         [StringLength(150)]
         public string monhoc { get; set; }
 
-        public int? dieml1 { get; set; }
+        public double? dieml1 { get; set; }
 
-        public int? dieml2 { get; set; }
+        public double? dieml2 { get; set; }
 
-        public int? dieml3 { get; set; }
+        public double? dieml3 { get; set; }
 
-        public int? dieml4 { get; set; }
+        public double? dieml4 { get; set; }
 
         [StringLength(50)]
         public string kq { get; set; }

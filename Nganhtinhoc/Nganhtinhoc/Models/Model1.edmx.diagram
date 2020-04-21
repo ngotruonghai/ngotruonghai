@@ -4,23 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b91ae82f559e43c79abc282f4f4c887b" Name="Diagram1">
-        <EntityTypeShape EntityType="NTHModel.Diemsinhvien" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Giaovien" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Nganh" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Sinhvien" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Taikhoan" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Tailieu" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Tuyendung" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Thoikhoabieu" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Thongbao" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NTHModel.Thongbaotruong" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="NTHModel.FK_Diemsinhvien_Sinhvien" ManuallyRouted="false" />
-        <AssociationConnector Association="NTHModel.FK_Giaovien_Nganh" ManuallyRouted="false" />
-        <AssociationConnector Association="NTHModel.FK_Tailieu_Giaovien" ManuallyRouted="false" />
-        <AssociationConnector Association="NTHModel.FK_Sinhvien_Nganh" ManuallyRouted="false" />
-        <AssociationConnector Association="NTHModel.FK_Thoikhoabieu_Nganh" ManuallyRouted="false" />
+      <Diagram DiagramId="4d161013fb6c4017bf5418f07643997f" Name="Diagram1">
+        <EntityTypeShape EntityType="websitleNTHModel.Diemsinhvien" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Giaovien" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Nganh" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Sinhvien" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Taikhoan" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Tailieu" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Tuyendung" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Thoikhoabieu" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Thongbao" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="websitleNTHModel.Thongbaotruong" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="websitleNTHModel.FK_Diemsinhvien_Sinhvien" ManuallyRouted="false" />
+        <AssociationConnector Association="websitleNTHModel.FK_Giaovien_Nganh" ManuallyRouted="false" />
+        <AssociationConnector Association="websitleNTHModel.FK_Tailieu_Giaovien" ManuallyRouted="false" />
+        <AssociationConnector Association="websitleNTHModel.FK_Sinhvien_Nganh" ManuallyRouted="false" />
+        <AssociationConnector Association="websitleNTHModel.FK_Thoikhoabieu_Nganh" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

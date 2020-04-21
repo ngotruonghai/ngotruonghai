@@ -9,10 +9,10 @@ namespace model
 {
     public class accout
     {
-        private NTHdbContext context = null;
+        private Model1 context = null;
         public accout()
         {
-            context = new NTHdbContext();
+            context = new Model1();
         }
         public bool loginn(String u, String p)
         {

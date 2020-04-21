@@ -9,14 +9,14 @@ namespace model.DAO
 {
     public class AccountDAO
     {
-        NTHdbContext db = null;
+        Model1 db = null;
         public AccountDAO()
         {
-            db = new NTHdbContext();
+            db = new Model1();
         }
         public bool LoginGV(String u,String p)
         {
-            var result = db.Giaoviens.Count(x => x.magiaovien == u && x.pass == p);
+            var result = db.Giaovien.Count(x => x.magiaovien == u && x.pass == p);
             if(result>0)
             {
                 return true;
@@ -28,11 +28,11 @@ namespace model.DAO
         }
         public Giaovien GetID_GV(String username)
         {
-            return db.Giaoviens.SingleOrDefault(x => x.magiaovien == username);
+            return db.Giaovien.SingleOrDefault(x => x.magiaovien == username);
         }
         public bool logSV(string u,string p)
         {
-            var result = db.Sinhviens.Count(x => x.masinhvien == u && x.pass == p);
+            var result = db.Sinhvien.Count(x => x.masinhvien == u && x.pass == p);
                 if(result > 0)
             {
                 return true;
@@ -44,7 +44,7 @@ namespace model.DAO
         }
        public bool log(String user,String pass)
         {
-            var result = db.Taikhoans.Count(x => x.tk == user && x.pass == pass);
+            var result = db.Taikhoan.Count(x => x.tk == user && x.pass == pass);
             if(result>0)
             {
                 return true;
@@ -56,7 +56,7 @@ namespace model.DAO
         }
         public Taikhoan GetID(String username)
         {
-            return db.Taikhoans.SingleOrDefault(x => x.tk == username);
+            return db.Taikhoan.SingleOrDefault(x => x.tk == username);
         }
     }
 }

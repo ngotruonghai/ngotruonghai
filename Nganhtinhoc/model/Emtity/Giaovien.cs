@@ -12,7 +12,7 @@ namespace model.Emtity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Giaovien()
         {
-            Tailieux = new HashSet<Tailieu>();
+            Tailieu = new HashSet<Tailieu>();
         }
 
         [Key]
@@ -31,6 +31,6 @@ namespace model.Emtity
         public virtual Nganh Nganh { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tailieu> Tailieux { get; set; }
+        public virtual ICollection<Tailieu> Tailieu { get; set; }
     }
 }

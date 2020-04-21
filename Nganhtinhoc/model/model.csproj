@@ -57,10 +57,9 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="Emtity\Diemsinhvien.cs" />
     <Compile Include="Emtity\Giaovien.cs" />
+    <Compile Include="Emtity\Model1.cs" />
     <Compile Include="Emtity\Nganh.cs" />
-    <Compile Include="Emtity\NTHdbContext.cs" />
     <Compile Include="Emtity\Sinhvien.cs" />
-    <Compile Include="Emtity\sysdiagram.cs" />
     <Compile Include="Emtity\Taikhoan.cs" />
     <Compile Include="Emtity\Tailieu.cs" />
     <Compile Include="Emtity\Thoikhoabieu.cs" />
@@ -73,6 +72,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
